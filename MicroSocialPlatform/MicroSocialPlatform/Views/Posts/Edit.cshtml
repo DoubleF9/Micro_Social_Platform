@@ -1,0 +1,46 @@
+﻿@model MicroSocialPlatform.Models.Post
+
+<h2 class="text-center mt-5">Edit post</h2>
+
+<br />
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert-success p-3 rounded-3 text-center mb-5 @ViewBag.Alert">
+        @ViewBag.Message
+    </div>
+    <br/>
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <form method="post" asp-action="Edit" asp-controller="Posts" asp-route-id="@Model.Id" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label asp-for="Image" class="form-label">Image</label>
+                    <br />
+                    <input type="file" asp-for="Image" class="form-control" />
+
+                    <span asp-validation-for="Image" class="text-danger"></span>
+
+                    <br /><br />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Content" class="form-label">Content</label>
+                    <br />
+                    <textarea asp-for="Content" class="form-control summernote"></textarea>
+
+                    <span asp-validation-for="Content" class="text-danger"></span>
+
+                    <br /><br />
+                </div>
+
+                
+
+                <button class="btn btn-sm btn-success" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

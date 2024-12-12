@@ -1,0 +1,19 @@
+﻿   @model IEnumerable<MicroSocialPlatform.Models.ApplicationUser>
+
+<h2>Search Results</h2>
+
+@if (!Model.Any())
+{
+    <p>No users found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var user in Model)
+        {
+            <li>
+                <a asp-controller="Users" asp-action="Profile" asp-route-id="@user.Id">@user.FirstName @user.LastName</a>
+            </li>
+        }
+    </ul>
+}

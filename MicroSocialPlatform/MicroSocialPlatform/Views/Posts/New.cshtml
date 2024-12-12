@@ -1,0 +1,23 @@
+﻿@model MicroSocialPlatform.Models.Post
+
+<h2>New Post</h2>
+<br/>
+<br/>
+
+<form asp-controller="Posts" asp-action="New" method="post" enctype="multipart/form-data">
+	
+
+	<div class="form-group">
+		<label asp-for="Image"></label>
+		<input asp-for="Image" type="file" class="form-control-file" />
+		<span asp-validation-for="Image" class="text-danger"></span>
+	</div>
+	<br />
+	<div class="form-group">
+		<label asp-for="Content">Content</label>
+		<textarea asp-for="Content" class="form-control"></textarea>
+		<span asp-validation-for="Content" class="text-danger"></span>
+	</div>
+	<br />
+	<button type="submit" class="btn btn-primary">Create</button>
+</form>

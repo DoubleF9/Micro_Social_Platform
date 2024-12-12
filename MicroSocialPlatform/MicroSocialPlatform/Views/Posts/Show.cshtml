@@ -1,0 +1,97 @@
+﻿@model MicroSocialPlatform.Models.Post
+
+<div class="card">
+    <partial name="PostInfo" model="Model" />
+</div>
+<br />
+@if (Model != null && ((ViewBag.AfisareButoane == true && Model.UserId == ViewBag.UserCurent) || ViewBag.EsteAdmin == true))
+{
+    <div class="d-flex flex-row justify-content-between">
+        <a class="btn btn-success" asp-controller="Posts" asp-action="Edit" asp-route-id="@Model.Id">Edit Post</a>
+        <form method="post" asp-controller="Posts" asp-action="Delete" asp-route-id="@Model.Id" class="ml-auto">
+            <button class="btn btn-danger" type="submit">Delete Post</button>
+        </form>
+    </div>
+}
+
+<br />
+@if (Model?.Comments != null)
+{
+    @foreach (var comm in Model.Comments)
+    {
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-md-2"></div>
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <strong><i class="bi bi-person"> @comm.User.UserName</i></strong>
+                            <p>@comm.Content</p>
+                            <small>@comm.Date</small>
+                            <br />
+
+                            @if (comm.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin == true)
+                            {
+                                <div class="d-flex justify-content-between mt-2">
+                                    <form method="post" asp-controller="Comments" asp-action="Delete" asp-route-id="@comm.Id">
+                                        <button class="btn btn-outline-danger" type="submit"><i class="bi bi-trash"></i> Delete</button>
+                                    </form>
+                                    <button class="btn btn-outline-success" onclick="showEditForm(@comm.Id)"><i class="bi bi-pencil-square"></i> Edit</button>
+                                </div>
+                                <div id="editForm-@comm.Id" style="display:none;" class="mt-2">
+                                    <form method="post" asp-controller="Comments" asp-action="Edit" asp-route-id="@comm.Id">
+                                        @Html.AntiForgeryToken()
+                                        <textarea name="Content" class="form-control">@comm.Content</textarea>
+                                        <span asp-validation-for="Content" class="text-danger"></span>
+                                        @if (TempData["EditCommentError"] != null)
+                                        {
+                                            <div class="text-danger">@TempData["EditCommentError"]</div>
+                                        }
+                                        <button type="submit" class="btn btn-outline-success btn-sm mt-2">Save</button>
+                                    </form>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    }
+}
+
+@* Display the form to add a comment *@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <form method="post" asp-controller="Posts" asp-action="Show">
+                    <div class="card-body">
+                        <input type="hidden" name="PostId" value="@Model?.Id" />
+
+                        <label>Comment</label>
+                        <br />
+                        <textarea class="form-control" name="Content"></textarea>
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                        <br /><br />
+
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<script>
+    function showEditForm(commentId) {
+        var form = document.getElementById('editForm-' + commentId);
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
