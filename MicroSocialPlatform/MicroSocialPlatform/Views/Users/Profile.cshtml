@@ -1,7 +1,42 @@
-﻿   @model MicroSocialPlatform.Models.ApplicationUser
+﻿@model MicroSocialPlatform.Models.ApplicationUser
 
-<h2>@Model.FirstName @Model.LastName</h2>
-<img src="@Model.ProfilePicture" alt="Profile Picture" class="img-thumbnail" />
-<p>@Model.Description</p>
+@if (TempData["Message"] != null)
+{
+    <div class="alert @TempData["Alert"]">
+        @TempData["Message"]
+    </div>
+}
+
+<div class="profile-header text-center">
+    <div class="profile-picture-container">
+        <img src="@Model.ProfilePicture" alt="Profile Picture" class="profile-picture rounded-circle" />
+    </div>
+    <br/>
+    <br />
+    <h2>@Model.FirstName @Model.LastName</h2>
+    <br />
+    <br />
+    <p>@Model.Description</p>
+</div>
+
+<style>
+    .profile-header {
+        margin-top: 20px;
+    }
+
+    .profile-picture-container {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .profile-picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
 
 <h2>Public</h2>
+
