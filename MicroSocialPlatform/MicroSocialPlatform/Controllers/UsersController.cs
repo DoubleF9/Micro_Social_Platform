@@ -1,19 +1,22 @@
-﻿using MicroSocialPlatform.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using MicroSocialPlatform.Data;
 using MicroSocialPlatform.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MicroSocialPlatform.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly ApplicationDbContext db;
+        private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public UsersController(ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            db = context;
+            _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -24,7 +27,7 @@ namespace MicroSocialPlatform.Controllers
                 return View(new List<ApplicationUser>());
             }
 
-            var users = db.Users
+            var users = _context.Users
                           .Where(u => u.FirstName.Contains(query) || u.LastName.Contains(query) || (u.FirstName + " " + u.LastName).Contains(query))
                           .ToList();
 
@@ -34,7 +37,7 @@ namespace MicroSocialPlatform.Controllers
         [HttpGet]
         public IActionResult Profile(string id)
         {
-            var user = db.Users.FirstOrDefault(u => u.Id == id);
+            var user = _context.Users.FirstOrDefault(u => u.Id == id);
             if (user == null)
             {
                 return NotFound();
@@ -57,6 +60,50 @@ namespace MicroSocialPlatform.Controllers
                 };
                 return View("BasicProfile", basicInfo);
             }
+        }
+
+        // GET: Users/Messages
+        public async Task<IActionResult> Messages()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Challenge();
+            }
+
+            var messages = await _context.Messages
+                .Where(m => m.SenderId == user.Id || m.ReceiverId == user.Id)
+                .ToListAsync();
+
+            return View(messages);
+        }
+
+        // GET: Users/CreateMessage
+        [HttpGet]
+        public IActionResult CreateMessage()
+        {
+            return View();
+        }
+
+        // POST: Users/CreateMessage
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateMessage(Message message)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return Challenge();
+                }
+
+                message.SenderId = user.Id;
+                _context.Messages.Add(message);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Messages));
+            }
+            return View(message);
         }
     }
 }

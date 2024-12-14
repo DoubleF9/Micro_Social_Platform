@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MicroSocialPlatform.Models.Message>
+
+@{
+    ViewData["Title"] = "Messages";
+}
+
+<h2>Messages</h2>
+
+<button type="button" class="btn btn-primary mb-3" onclick="window.location.href='@Url.Action("CreateMessage", "Users")'">New Message</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Content</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var message in Model)
+        {
+            <tr>
+                <td>@message.SenderId</td>
+                <td>@message.ReceiverId</td>
+                <td>@message.Content</td>
+                <td>@message.Timestamp</td>
+            </tr>
+        }
+    </tbody>
+</table>

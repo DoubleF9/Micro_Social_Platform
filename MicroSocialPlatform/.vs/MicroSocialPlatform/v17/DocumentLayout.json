@@ -1,0 +1,265 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\views\\users\\createmessage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\views\\users\\createmessage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\views\\users\\messages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\views\\users\\messages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\views\\posts\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\views\\posts\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\data\\migrations\\20241206172630_profilepic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\data\\migrations\\20241206172630_profilepic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\asus\\documents\\github\\micro_social_platform\\microsocialplatform\\microsocialplatform\\data\\migrations\\20241212125629_mig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\data\\migrations\\20241212125629_mig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1099,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Models\\Message.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\Message.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Models\\Message.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:43:23.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T20:58:18.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T16:57:31.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Program.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Program.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwC8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:46:25.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateMessage.cshtml",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Users\\CreateMessage.cshtml",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Views\\Users\\CreateMessage.cshtml",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Users\\CreateMessage.cshtml",
+              "RelativeToolTip": "MicroSocialPlatform\\Views\\Users\\CreateMessage.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-13T07:50:45.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Messages.cshtml",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Users\\Messages.cshtml",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Views\\Users\\Messages.cshtml",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Users\\Messages.cshtml",
+              "RelativeToolTip": "MicroSocialPlatform\\Views\\Users\\Messages.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-13T08:19:37.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Controllers\\MessagesController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAuwHgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:44:36.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T17:06:38.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\SeedData.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Models\\SeedData.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T21:06:10.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Controllers\\CommentsController.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Controllers\\CommentsController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwHYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T20:39:39.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20241212125629_mig.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Data\\Migrations\\20241212125629_mig.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Data\\Migrations\\20241212125629_mig.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Data\\Migrations\\20241212125629_mig.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Data\\Migrations\\20241212125629_mig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T12:56:29.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\appsettings.json",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\appsettings.json",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\appsettings.json",
+              "RelativeToolTip": "MicroSocialPlatform\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-12T12:55:28.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20241206172630_ProfilePic.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Data\\Migrations\\20241206172630_ProfilePic.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Data\\Migrations\\20241206172630_ProfilePic.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Data\\Migrations\\20241206172630_ProfilePic.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Data\\Migrations\\20241206172630_ProfilePic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T17:26:30.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Models\\Comment.cs",
+              "RelativeToolTip": "MicroSocialPlatform\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T20:31:41.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Show.cshtml",
+              "DocumentMoniker": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Posts\\Show.cshtml",
+              "RelativeDocumentMoniker": "MicroSocialPlatform\\Views\\Posts\\Show.cshtml",
+              "ToolTip": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Posts\\Show.cshtml",
+              "RelativeToolTip": "MicroSocialPlatform\\Views\\Posts\\Show.cshtml",
+              "ViewState": "AgIAAD0AAAAAAAAAAADwv0wAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T19:16:09.441Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

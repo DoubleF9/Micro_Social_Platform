@@ -1,0 +1,22 @@
+﻿@model MicroSocialPlatform.Models.Message
+
+@{
+    ViewData["Title"] = "Create Message";
+}
+
+<h2>Create Message</h2>
+
+<form asp-action="CreateMessage" method="post">
+    <div class="form-group">
+        <label asp-for="ReceiverId" class="control-label"></label>
+        <input asp-for="ReceiverId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Content" class="control-label"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+

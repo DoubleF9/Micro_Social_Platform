@@ -50,21 +50,21 @@ namespace MicroSocialPlatform.Models
         ProfilePicture = "/profile_pictures/admin.jpg",
         IsPublic= true
     },
-    //new ApplicationUser
-    //{
-    //    Id = "8e445865-a24d-4543-a6c6-9443d048cdb1", // primary key
-    //    UserName = "editor@test.com",
-    //    EmailConfirmed = true,
-    //    NormalizedEmail = "EDITOR@TEST.COM",
-    //    Email = "editor@test.com",
-    //    NormalizedUserName = "EDITOR@TEST.COM",
-    //    PasswordHash = hasher.HashPassword(null, "Editor1!"),
-    //    Description = "Editor user",
-    //    FirstName = "Editor",
-    //    LastName = "User",
-    //    ProfilePicture = "editor_profile_picture_url",
-    //     IsPublic = true
-    //},
+    new ApplicationUser
+    {
+        Id = "8e445865-a24d-4543-a6c6-9443d048cdb1", // primary key
+       UserName = "editor@test.com",
+        EmailConfirmed = true,
+        NormalizedEmail = "EDITOR@TEST.COM",
+       Email = "editor@test.com",
+       NormalizedUserName = "EDITOR@TEST.COM",
+       PasswordHash = hasher.HashPassword(null, "Editor1!"),
+        Description = "Editor user",
+        FirstName = "Editor",
+        LastName = "User",
+       ProfilePicture = "editor_profile_picture_url",
+        IsPublic = true
+    },
     new ApplicationUser
     {
         Id = "8e445865-a24d-4543-a6c6-9443d048cdb2", // primary key
