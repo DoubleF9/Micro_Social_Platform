@@ -1,4 +1,5 @@
-﻿@model MicroSocialPlatform.Models.ApplicationUser
+﻿@using System.Security.Claims
+@model MicroSocialPlatform.Models.ApplicationUser
 
 @if (TempData["Message"] != null)
 {
@@ -17,7 +18,19 @@
     <br />
     <br />
     <p>@Model.Description</p>
+    @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
+    {
+        <form asp-action="SendFollowRequest" asp-controller="Follows" method="post">
+            <input type="hidden" name="followedId" value="@Model.Id" />
+            <button type="submit" class="btn btn-primary">Follow</button>
+        </form>
+    }
 </div>
+<h3>Posts</h3>
+@foreach (var post in Model.Posts)
+{
+    @await Html.PartialAsync("PostInfo", post)
+}
 
 <style>
     .profile-header {

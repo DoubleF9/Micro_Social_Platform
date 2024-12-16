@@ -22,6 +22,7 @@ namespace MicroSocialPlatform.Controllers
             _env = env;
         }
 
+        [Authorize(Roles = "User,Editor,Admin")]
         [HttpGet]
         public IActionResult Search(string query)
         {
@@ -37,15 +38,20 @@ namespace MicroSocialPlatform.Controllers
             return View(users);
         }
 
+        [Authorize(Roles = "User,Editor,Admin")]
         [HttpGet]
-        public IActionResult Profile(string id)
+        public async Task<IActionResult> Profile(string id)
         {
             if (TempData.ContainsKey("message"))
             {
                 ViewBag.Message = TempData["Message"];
                 ViewBag.Alert = TempData["Alert"];
             }
-            var user = _context.Users.FirstOrDefault(u => u.Id == id);
+
+            var user = await _context.Users
+                .Include(u => u.Posts)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
             if (user == null)
             {
                 return NotFound();
@@ -57,7 +63,6 @@ namespace MicroSocialPlatform.Controllers
             }
             else
             {
-
                 var basicInfo = new
                 {
                     user.FirstName,
@@ -69,6 +74,7 @@ namespace MicroSocialPlatform.Controllers
             }
         }
 
+        [Authorize(Roles = "User,Editor,Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
@@ -161,6 +167,7 @@ namespace MicroSocialPlatform.Controllers
         }
 
         // GET: Users/Messages
+        [Authorize(Roles = "User,Editor,Admin")]
         public async Task<IActionResult> Messages()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -177,6 +184,7 @@ namespace MicroSocialPlatform.Controllers
         }
 
         // GET: Users/CreateMessage
+        [Authorize(Roles = "User,Editor,Admin")]
         [HttpGet]
         public IActionResult CreateMessage()
         {

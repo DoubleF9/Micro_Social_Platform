@@ -1,0 +1,103 @@
+﻿@using System.Security.Claims
+@model MicroSocialPlatform.Models.Group
+
+@if (TempData["message"] != null)
+{
+    <div class="alert @TempData["messageType"]">
+        @TempData["message"]
+    </div>
+}
+
+<h2>@Model.Name</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="@Model.Image" alt="Group Image" class="img-thumbnail" style="width: 100%; height: auto;" />
+        }
+    </div>
+    <div class="col-md-8">
+        <p>@Model.Description</p>
+        <p>Moderator: @Model.Moderator?.UserName</p>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-action="JoinGroupRequest" method="post">
+                <input type="hidden" name="groupId" value="@Model.Id" />
+                <button type="submit" class="btn btn-primary">Request to Join</button>
+            </form>
+        }
+
+        @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
+        {
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit Group</a>
+            <form asp-action="Delete" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="btn btn-danger">Delete Group</button>
+            </form>
+        }
+    </div>
+</div>
+
+<h3>Members</h3>
+<ul>
+    @foreach (var userGroup in Model.UserGroups.Where(ug => ug.Status == true))
+    {
+        <li>
+            @userGroup.User?.UserName
+            @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
+            {
+                <form asp-action="KickMember" method="post" style="display:inline;">
+                    <input type="hidden" name="userId" value="@userGroup.UserId" />
+                    <input type="hidden" name="groupId" value="@Model.Id" />
+                    <button type="submit" class="btn btn-danger btn-sm">Kick</button>
+                </form>
+            }
+        </li>
+    }
+</ul>
+
+@if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
+{
+    <h3>Manage Join Requests</h3>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userGroup in Model.UserGroups.Where(ug => ug.Status == false))
+            {
+                <tr>
+                    <td>@userGroup.User?.UserName</td>
+                    <td>
+                        <form asp-action="ApproveRequest" method="post" style="display:inline;">
+                            <input type="hidden" name="userId" value="@userGroup.UserId" />
+                            <input type="hidden" name="groupId" value="@Model.Id" />
+                            <button type="submit" class="btn btn-success">Approve</button>
+                        </form>
+                        <form asp-action="RejectRequest" method="post" style="display:inline;">
+                            <input type="hidden" name="userId" value="@userGroup.UserId" />
+                            <input type="hidden" name="groupId" value="@Model.Id" />
+                            <button type="submit" class="btn btn-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+
+
+
+
+

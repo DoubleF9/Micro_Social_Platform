@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MicroSocialPlatform.Models.Group>
+
+<h2>Groups</h2>
+
+<form asp-action="Search" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="query" class="form-control" placeholder="Search groups" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<a asp-action="New" class="btn btn-primary mb-3">New Group</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Moderator</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(group.Image))
+                    {
+                        <img src="@group.Image" alt="Group Image" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;" />
+                    }
+                </td>
+                <td>@group.Name</td>
+                <td>@group.Description</td>
+                <td>@group.Moderator?.UserName</td>
+                <td>
+                    <a asp-action="Show" asp-route-id="@group.Id" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
