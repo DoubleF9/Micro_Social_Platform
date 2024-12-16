@@ -76,6 +76,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Messages/DirectMessages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGlyZWN0TWVzc2FnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Messages/GroupMessages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcR3JvdXBNZXNzYWdlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

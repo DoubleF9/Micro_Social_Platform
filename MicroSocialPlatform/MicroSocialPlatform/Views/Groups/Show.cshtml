@@ -39,6 +39,12 @@
         }
     </div>
 </div>
+<br/>
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-action="GroupMessages" asp-controller="Messages" asp-route-groupId="@Model.Id" class="btn btn-info">Chat</a>
+}
+<br />
 
 <h3>Members</h3>
 <ul>

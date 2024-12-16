@@ -5,118 +5,126 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MicroSocialPlatform.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class MessagesController : ControllerBase
+    [Authorize]
+    public class MessagesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext db;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public MessagesController(ApplicationDbContext context)
+        public MessagesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _context = context;
+            db = context;
+            _userManager = userManager;
         }
 
-        // GET: api/Messages
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
+        // GET: Messages/DirectMessages
+        public async Task<IActionResult> DirectMessages(string userId)
         {
-            return await _context.Messages.ToListAsync();
-        }
-
-        // GET: api/Messages/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Message>> GetMessage(int id)
-        {
-            var message = await _context.Messages.FindAsync(id);
-
-            if (message == null)
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
             {
-                return NotFound();
+                return Challenge();
             }
 
-            return message;
+            var messages = await db.Messages
+                .Where(m => (m.SenderId == currentUser.Id && m.ReceiverId == userId) ||
+                            (m.SenderId == userId && m.ReceiverId == currentUser.Id))
+                .OrderBy(m => m.Timestamp)
+                .ToListAsync();
+
+            if (messages == null)
+            {
+                messages = new List<Message>();
+            }
+
+            ViewBag.ReceiverId = userId;
+            return View(messages);
         }
 
-        // POST: api/Messages
+        // GET: Messages/GroupMessages
+        public async Task<IActionResult> GroupMessages(int groupId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            var messages = await db.Messages
+                .Where(m => m.GroupId == groupId)
+                .OrderBy(m => m.Timestamp)
+                .ToListAsync();
+
+            if (messages == null)
+            {
+                messages = new List<Message>();
+            }
+
+            ViewBag.GroupId = groupId;
+            return View(messages);
+        }
+
+        // POST: Messages/SendDirectMessage
         [HttpPost]
-        public async Task<ActionResult<Message>> PostMessage(Message message)
+        public async Task<IActionResult> SendDirectMessage(string receiverId, string content)
         {
-            _context.Messages.Add(message);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetMessage", new { id = message.Id }, message);
-        }
-
-        // PUT: api/Messages/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMessage(int id, Message message)
-        {
-            if (id != message.Id)
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
             {
-                return BadRequest();
+                return Challenge();
             }
 
-            _context.Entry(message).State = EntityState.Modified;
-
-            try
+            if (string.IsNullOrEmpty(content))
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MessageExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                TempData["Error"] = "Message content is required.";
+                return RedirectToAction("DirectMessages", new { userId = receiverId });
             }
 
-            return NoContent();
+            var message = new Message
+            {
+                SenderId = currentUser.Id,
+                ReceiverId = receiverId,
+                Content = content
+            };
+
+            db.Messages.Add(message);
+            await db.SaveChangesAsync();
+
+            return RedirectToAction("DirectMessages", new { userId = receiverId });
         }
 
-        // DELETE: api/Messages/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMessage(int id)
+        // POST: Messages/SendGroupMessage
+        [HttpPost]
+        public async Task<IActionResult> SendGroupMessage(int groupId, string content)
         {
-            var message = await _context.Messages.FindAsync(id);
-            if (message == null)
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
             {
-                return NotFound();
+                return Challenge();
             }
 
-            _context.Messages.Remove(message);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool MessageExists(int id)
-        {
-            return _context.Messages.Any(e => e.Id == id);
-        }
-
-        [HttpGet("CreateMessage")]
-        public IActionResult CreateMessage()
-        {
-            return Ok();
-        }
-
-        [HttpPost("CreateMessage")]
-        public async Task<IActionResult> CreateMessage(Message message)
-        {
-            if (ModelState.IsValid)
+            if (string.IsNullOrEmpty(content))
             {
-                _context.Messages.Add(message);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(GetMessages));
+                TempData["Error"] = "Message content is required.";
+                return RedirectToAction("GroupMessages", new { groupId = groupId });
             }
-            return BadRequest(ModelState);
+
+            var message = new Message
+            {
+                SenderId = currentUser.Id,
+                GroupId = groupId,
+                Content = content
+            };
+
+            db.Messages.Add(message);
+            await db.SaveChangesAsync();
+
+            return RedirectToAction("GroupMessages", new { groupId = groupId });
         }
     }
 }

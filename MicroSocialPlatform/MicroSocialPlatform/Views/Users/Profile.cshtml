@@ -26,6 +26,13 @@
         </form>
     }
 </div>
+<br/>
+@if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
+{
+
+    <a asp-action="DirectMessages" asp-controller="Messages" asp-route-userId="@Model.Id" class="btn btn-info">Message</a>
+}
+<br />
 <h3>Posts</h3>
 @foreach (var post in Model.Posts)
 {
