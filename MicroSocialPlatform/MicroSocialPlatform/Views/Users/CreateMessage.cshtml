@@ -1,22 +1,68 @@
 ﻿@model MicroSocialPlatform.Models.Message
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-@{
-    ViewData["Title"] = "Create Message";
+<div class="container py-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-transparent border-0 pt-4 px-4">
+            <h2 class="h4 mb-0 d-flex align-items-center gap-2">
+                <i class="bi bi-envelope"></i>
+                Create Message
+            </h2>
+        </div>
+
+        <div class="card-body p-4">
+            <form asp-action="CreateMessage" method="post">
+                <div class="form-floating mb-3">
+                    <input asp-for="ReceiverId" class="form-control form-control-lg" placeholder="Receiver">
+                    <label asp-for="ReceiverId">
+                        <i class="bi bi-person me-2"></i>Receiver
+                    </label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <textarea asp-for="Content"
+                              class="form-control form-control-lg"
+                              style="height: 120px"
+                              placeholder="Your message"></textarea>
+                    <label asp-for="Content">
+                        <i class="bi bi-chat-text me-2"></i>Message
+                    </label>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-send"></i>
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+        }
+
+    .btn-primary {
+        background: linear-gradient(to right, #0d6efd, #0b5ed7);
+        border: none;
+        transition: all 0.2s;
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13,110,253,0.2);
+        }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 }
-
-<h2>Create Message</h2>
-
-<form asp-action="CreateMessage" method="post">
-    <div class="form-group">
-        <label asp-for="ReceiverId" class="control-label"></label>
-        <input asp-for="ReceiverId" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Content" class="control-label"></label>
-        <textarea asp-for="Content" class="form-control"></textarea>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
-    </div>
-</form>
 

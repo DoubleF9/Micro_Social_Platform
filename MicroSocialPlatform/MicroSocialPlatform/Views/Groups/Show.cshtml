@@ -1,109 +1,177 @@
 ﻿@using System.Security.Claims
 @model MicroSocialPlatform.Models.Group
 
-@if (TempData["message"] != null)
-{
-    <div class="alert @TempData["messageType"]">
-        @TempData["message"]
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<div class="container py-4">
+    @if (TempData["message"] != null)
+    {
+        <div class="alert @TempData["messageType"] alert-dismissible fade show mb-4" role="alert">
+            <i class="bi bi-info-circle me-2"></i>
+            @TempData["message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm mb-4">
+        <div class="row g-0">
+            <div class="col-md-3">
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <div class="d-flex justify-content-end pe-4 pt-3">
+                        <img src="@Model.Image" alt="@Model.Name"
+                             class="img-fluid rounded object-fit-cover"
+                             style="height: 120px; width: 80%;" />
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex justify-content-end pe-4 pt-3">
+                        <div class="bg-light d-flex align-items-center justify-content-center rounded"
+                             style="height: 120px; width: 80%;">
+                            <i class="bi bi-people-fill display-1 text-secondary"></i>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h2 class="card-title h4 mb-1">@Model.Name</h2>
+                            <p class="text-muted small mb-2">
+                                <i class="bi bi-shield-check me-1"></i>
+                                Moderator: @Model.Moderator?.UserName
+                            </p>
+                            <p class="card-text">@Model.Description</p>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form asp-action="JoinGroupRequest" method="post">
+                                    <input type="hidden" name="groupId" value="@Model.Id" />
+                                    <button type="submit" class="btn btn-primary btn-sm">
+                                        <i class="bi bi-person-plus me-1"></i> Join
+                                    </button>
+                                </form>
+
+                                <a asp-action="GroupMessages" asp-controller="Messages"
+                                   asp-route-groupId="@Model.Id"
+                                   class="btn btn-outline-info btn-sm">
+                                    <i class="bi bi-chat-dots me-1"></i> Chat
+                                </a>
+                            }
+                        </div>
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated &&
+                    User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
+                    {
+                        <div class="d-flex gap-2 mt-3">
+                            <a asp-action="Edit" asp-route-id="@Model.Id"
+                               class="btn btn-outline-warning btn-sm">
+                                <i class="bi bi-pencil me-1"></i> Edit
+                            </a>
+                            <form asp-action="Delete" method="post">
+                                <input type="hidden" name="id" value="@Model.Id" />
+                                <button type="submit" class="btn btn-outline-danger btn-sm"
+                                        onclick="return confirm('Are you sure?')">
+                                    <i class="bi bi-trash me-1"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
-}
 
-<h2>@Model.Name</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h3 class="h5 mb-0">
+                        <i class="bi bi-people me-2"></i>Members
+                    </h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var userGroup in Model.UserGroups.Where(ug => ug.Status == true))
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                            <div>
+                                <i class="bi bi-person-circle me-2 text-secondary"></i>
+                                @userGroup.User?.UserName
+                            </div>
+                            @if (User.Identity.IsAuthenticated &&
+                           User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
+                            {
+                                <form asp-action="KickMember" method="post">
+                                    <input type="hidden" name="userId" value="@userGroup.UserId" />
+                                    <input type="hidden" name="groupId" value="@Model.Id" />
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-x-circle me-1"></i> Kick
+                                    </button>
+                                </form>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
 
-<div class="row">
-    <div class="col-md-4">
-        @if (!string.IsNullOrEmpty(Model.Image))
+        @if (User.Identity.IsAuthenticated &&
+        User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
         {
-            <img src="@Model.Image" alt="Group Image" class="img-thumbnail" style="width: 100%; height: auto;" />
-        }
-    </div>
-    <div class="col-md-8">
-        <p>@Model.Description</p>
-        <p>Moderator: @Model.Moderator?.UserName</p>
-
-        @if (User.Identity.IsAuthenticated)
-        {
-            <form asp-action="JoinGroupRequest" method="post">
-                <input type="hidden" name="groupId" value="@Model.Id" />
-                <button type="submit" class="btn btn-primary">Request to Join</button>
-            </form>
-        }
-
-        @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
-        {
-            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit Group</a>
-            <form asp-action="Delete" method="post" style="display:inline;">
-                <input type="hidden" name="id" value="@Model.Id" />
-                <button type="submit" class="btn btn-danger">Delete Group</button>
-            </form>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h3 class="h5 mb-0">
+                            <i class="bi bi-person-plus me-2"></i>Join Requests
+                        </h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>User</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var userGroup in Model.UserGroups.Where(ug => ug.Status == false))
+                                {
+                                    <tr>
+                                        <td>
+                                            <i class="bi bi-person-circle me-2 text-secondary"></i>
+                                            @userGroup.User?.UserName
+                                        </td>
+                                        <td class="text-end">
+                                            <div class="d-flex gap-2 justify-content-end">
+                                                <form asp-action="ApproveRequest" method="post">
+                                                    <input type="hidden" name="userId" value="@userGroup.UserId" />
+                                                    <input type="hidden" name="groupId" value="@Model.Id" />
+                                                    <button type="submit" class="btn btn-outline-success btn-sm">
+                                                        <i class="bi bi-check-lg"></i>
+                                                    </button>
+                                                </form>
+                                                <form asp-action="RejectRequest" method="post">
+                                                    <input type="hidden" name="userId" value="@userGroup.UserId" />
+                                                    <input type="hidden" name="groupId" value="@Model.Id" />
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                                                        <i class="bi bi-x-lg"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         }
     </div>
 </div>
-<br/>
-@if (User.Identity.IsAuthenticated)
-{
-    <a asp-action="GroupMessages" asp-controller="Messages" asp-route-groupId="@Model.Id" class="btn btn-info">Chat</a>
-}
-<br />
-
-<h3>Members</h3>
-<ul>
-    @foreach (var userGroup in Model.UserGroups.Where(ug => ug.Status == true))
-    {
-        <li>
-            @userGroup.User?.UserName
-            @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
-            {
-                <form asp-action="KickMember" method="post" style="display:inline;">
-                    <input type="hidden" name="userId" value="@userGroup.UserId" />
-                    <input type="hidden" name="groupId" value="@Model.Id" />
-                    <button type="submit" class="btn btn-danger btn-sm">Kick</button>
-                </form>
-            }
-        </li>
-    }
-</ul>
-
-@if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.ModeratorId)
-{
-    <h3>Manage Join Requests</h3>
-
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var userGroup in Model.UserGroups.Where(ug => ug.Status == false))
-            {
-                <tr>
-                    <td>@userGroup.User?.UserName</td>
-                    <td>
-                        <form asp-action="ApproveRequest" method="post" style="display:inline;">
-                            <input type="hidden" name="userId" value="@userGroup.UserId" />
-                            <input type="hidden" name="groupId" value="@Model.Id" />
-                            <button type="submit" class="btn btn-success">Approve</button>
-                        </form>
-                        <form asp-action="RejectRequest" method="post" style="display:inline;">
-                            <input type="hidden" name="userId" value="@userGroup.UserId" />
-                            <input type="hidden" name="groupId" value="@Model.Id" />
-                            <button type="submit" class="btn btn-danger">Reject</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-
-
-
-
-
-
-
-
-

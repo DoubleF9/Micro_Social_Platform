@@ -8,6 +8,7 @@ wwwroot\images\default_group_pic.png
 wwwroot\images\Didier_Drogba_Champions_League_Winner.jpg
 wwwroot\images\fabregas.jpg
 wwwroot\images\harry the hamster.jpg
+wwwroot\images\icons-5235125_1280.png
 wwwroot\images\jackie chan.jpg
 wwwroot\images\morbius.jpg
 wwwroot\images\mourinho.jpg

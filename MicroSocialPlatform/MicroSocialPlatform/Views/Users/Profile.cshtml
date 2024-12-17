@@ -1,54 +1,82 @@
 ﻿@using System.Security.Claims
 @model MicroSocialPlatform.Models.ApplicationUser
-
-@if (TempData["Message"] != null)
-{
-    <div class="alert @TempData["Alert"]">
-        @TempData["Message"]
-    </div>
-}
-
-<div class="profile-header text-center">
-    <div class="profile-picture-container">
-        <img src="@Model.ProfilePicture" alt="Profile Picture" class="profile-picture rounded-circle" />
-    </div>
-    <br/>
-    <br />
-    <h2>@Model.FirstName @Model.LastName</h2>
-    <br />
-    <br />
-    <p>@Model.Description</p>
-    @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<div class="container py-5">
+    <!-- Alert Message -->
+    @if (TempData["Message"] != null)
     {
-        <form asp-action="SendFollowRequest" asp-controller="Follows" method="post">
-            <input type="hidden" name="followedId" value="@Model.Id" />
-            <button type="submit" class="btn btn-primary">Follow</button>
-        </form>
+        <div class="alert @TempData["Alert"] d-flex align-items-center" role="alert">
+            <i class="bi bi-info-circle me-2"></i>
+            @TempData["Message"]
+        </div>
     }
-</div>
-<br/>
-@if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
-{
 
-    <a asp-action="DirectMessages" asp-controller="Messages" asp-route-userId="@Model.Id" class="btn btn-info">Message</a>
-}
-<br />
-<h3>Posts</h3>
-@foreach (var post in Model.Posts)
-{
-    @await Html.PartialAsync("PostInfo", post)
-}
+    <!-- Profile Card -->
+    <div class="card border-0 shadow-sm rounded-4 mb-5">
+        <div class="card-body p-4 text-center">
+            <div class="position-relative mb-4">
+                <div class="profile-picture-container shadow">
+                    <img src="@Model.ProfilePicture" alt="Profile Picture" class="profile-picture rounded-circle border" />
+                </div>
+            </div>
+
+            <h2 class="mb-3">@Model.FirstName @Model.LastName</h2>
+            <p class="text-muted mb-4">@Model.Description</p>
+
+            <div class="d-flex justify-content-center gap-3">
+                @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
+                {
+                    <form asp-action="SendFollowRequest" asp-controller="Follows" method="post">
+                        <input type="hidden" name="followedId" value="@Model.Id" />
+                        <button type="submit" class="btn btn-primary d-flex align-items-center gap-2">
+                            <i class="bi bi-person-plus"></i>
+                            Follow
+                        </button>
+                    </form>
+
+                    <a asp-action="DirectMessages"
+                       asp-controller="Messages"
+                       asp-route-userId="@Model.Id"
+                       class="btn btn-outline-primary d-flex align-items-center gap-2">
+                        <i class="bi bi-chat-dots"></i>
+                        Message
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-header bg-transparent border-0 p-4">
+            <h3 class="h5 mb-0 d-flex align-items-center gap-2">
+                <i class="bi bi-journal-text"></i>
+                Posts
+            </h3>
+        </div>
+        <div class="card-body p-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                @foreach (var post in Model.Posts)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            @await Html.PartialAsync("PostInfo", post)
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
-    .profile-header {
-        margin-top: 20px;
-    }
-
     .profile-picture-container {
         width: 150px;
         height: 150px;
         margin: 0 auto;
         overflow: hidden;
+        border: 5px solid #fff;
+        transition: all 0.3s ease;
     }
 
     .profile-picture {
@@ -56,7 +84,30 @@
         height: 100%;
         object-fit: cover;
     }
+
+    .card {
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+        }
+
+    .btn {
+        transition: all 0.2s;
+    }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+    .btn-primary {
+        background: linear-gradient(to right, #0d6efd, #0b5ed7);
+        border: none;
+    }
 </style>
 
-<h2>Public</h2>
-
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+}
