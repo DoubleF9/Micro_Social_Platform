@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GpZE7rell0++vXSzrVi1vQNaiKbKlxlk00mlAxtmmnU=",
+  "Hash": "eVA9OolwFEaxlIu86XG6SHWMtthGnoQ37TgbBoehsRU=",
   "Source": "MicroSocialPlatform",
   "BasePath": "_content/MicroSocialPlatform",
   "Mode": "Default",
@@ -2976,6 +2976,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\profile_pictures\\cristiano.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\icons-5235125_1280.png",
+      "SourceId": "MicroSocialPlatform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\",
+      "BasePath": "_content/MicroSocialPlatform",
+      "RelativePath": "profile_pictures/icons-5235125_1280#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jaml21c23p",
+      "Integrity": "5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\profile_pictures\\icons-5235125_1280.png"
     },
     {
       "Identity": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\shark.jpg",
@@ -6105,7 +6126,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 11:20:15 GMT"
+          "Value": "Tue, 17 Dec 2024 12:20:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6150,7 +6171,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 11:20:15 GMT"
+          "Value": "Tue, 17 Dec 2024 12:20:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11901,6 +11922,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-5ewfRGLU6nusoZu9nb+jtNvwxUzW8FGwHKsH7ski0V4="
+        }
+      ]
+    },
+    {
+      "Route": "profile_pictures/icons-5235125_1280.jaml21c23p.png",
+      "AssetFile": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\icons-5235125_1280.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "94948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 17 Dec 2024 12:54:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jaml21c23p"
+        },
+        {
+          "Name": "label",
+          "Value": "profile_pictures/icons-5235125_1280.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w="
+        }
+      ]
+    },
+    {
+      "Route": "profile_pictures/icons-5235125_1280.png",
+      "AssetFile": "C:\\Users\\Asus\\Documents\\GitHub\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\icons-5235125_1280.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "94948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 17 Dec 2024 12:54:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w="
         }
       ]
     },

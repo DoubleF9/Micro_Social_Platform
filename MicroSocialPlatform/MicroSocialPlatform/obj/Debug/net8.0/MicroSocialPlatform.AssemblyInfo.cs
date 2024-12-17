@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicroSocialPlatform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df1064c5f75dab6d7fc942d429d5c950cd85b96d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90f43b901cc387dd26a325bf6b06c16edbed68c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroSocialPlatform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroSocialPlatform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

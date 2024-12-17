@@ -32,6 +32,7 @@ namespace MicroSocialPlatform.Controllers
             }
 
             var messages = await db.Messages
+                .Include(m => m.Sender) // Include sender information
                 .Where(m => (m.SenderId == currentUser.Id && m.ReceiverId == userId) ||
                             (m.SenderId == userId && m.ReceiverId == currentUser.Id))
                 .OrderBy(m => m.Timestamp)
@@ -43,8 +44,12 @@ namespace MicroSocialPlatform.Controllers
             }
 
             ViewBag.ReceiverId = userId;
+            ViewBag.CurrentUserId = currentUser.Id;
+            ViewBag.CurrentUserName = currentUser.FirstName;
+
             return View(messages);
         }
+
 
         // GET: Messages/GroupMessages
         public async Task<IActionResult> GroupMessages(int groupId)
@@ -56,6 +61,7 @@ namespace MicroSocialPlatform.Controllers
             }
 
             var messages = await db.Messages
+                .Include(m => m.Sender) // Include sender information
                 .Where(m => m.GroupId == groupId)
                 .OrderBy(m => m.Timestamp)
                 .ToListAsync();
@@ -66,8 +72,12 @@ namespace MicroSocialPlatform.Controllers
             }
 
             ViewBag.GroupId = groupId;
+            ViewBag.CurrentUserId = currentUser.Id;
+            ViewBag.CurrentUserName = currentUser.FirstName;
+
             return View(messages);
         }
+
 
         // POST: Messages/SendDirectMessage
         [HttpPost]

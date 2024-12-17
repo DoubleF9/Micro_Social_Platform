@@ -77,6 +77,7 @@ wwwroot\profile_pictures\alan shearer.jpg
 wwwroot\profile_pictures\Branislav-Ivanovic-Chelsea.jpg
 wwwroot\profile_pictures\cholo.png
 wwwroot\profile_pictures\cristiano.jpg
+wwwroot\profile_pictures\icons-5235125_1280.png
 wwwroot\profile_pictures\shark.jpg
 wwwroot\profile_pictures\user.jpeg
 wwwroot\profile_pictures\user.jpeg.jfif

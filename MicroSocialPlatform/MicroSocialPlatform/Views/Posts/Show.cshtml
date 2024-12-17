@@ -57,6 +57,7 @@
                                     <button class="btn btn-sm btn-outline-primary" onclick="showEditForm(@comm.Id)">
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
+
                                     <form method="post" asp-controller="Comments" asp-action="Delete" asp-route-id="@comm.Id">
                                         <button class="btn btn-sm btn-outline-danger" type="submit">
                                             <i class="bi bi-trash"></i> Delete
@@ -71,11 +72,17 @@
                                             <textarea name="Content" class="form-control">@comm.Content</textarea>
                                             <label>Edit your comment</label>
                                         </div>
+                                        <span asp-validation-for="Content" class="text-danger"></span>
+                                        @if (TempData["EditCommentError"] != null)
+                                        {
+                                            <div class="text-danger">@TempData["EditCommentError"]</div>
+                                        }
                                         <button type="submit" class="btn btn-primary">
                                             <i class="bi bi-check2"></i> Save Changes
                                         </button>
                                     </form>
                                 </div>
+
                             }
                         </div>
                     </div>
@@ -101,6 +108,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    function showEditForm(commentId) {
+        var form = document.getElementById('editForm-' + commentId);
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
 
 <style>
     .card {

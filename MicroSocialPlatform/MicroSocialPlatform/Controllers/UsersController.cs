@@ -63,14 +63,7 @@ namespace MicroSocialPlatform.Controllers
             }
             else
             {
-                var basicInfo = new
-                {
-                    user.FirstName,
-                    user.LastName,
-                    user.Description,
-                    user.ProfilePicture
-                };
-                return View("BasicProfile", basicInfo);
+                return View("BasicProfile",user);
             }
         }
 
