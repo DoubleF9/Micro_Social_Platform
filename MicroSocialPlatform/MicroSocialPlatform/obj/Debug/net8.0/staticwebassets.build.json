@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "27vabpLAKFvZeWCCovqygJ/+QRbcv9fwfHj4c9Z2a4k=",
+  "Hash": "YWKblkbd8s8cvQbWoGMBgmYFX2DrTMviCGZNWVZdsvA=",
   "Source": "MicroSocialPlatform",
   "BasePath": "_content/MicroSocialPlatform",
   "Mode": "Default",
@@ -1382,6 +1382,27 @@
       "OriginalItemSpec": "wwwroot\\images\\1.png"
     },
     {
+      "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\17432852-old-wood-tree-texture-background-pattern.jpg",
+      "SourceId": "MicroSocialPlatform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\",
+      "BasePath": "_content/MicroSocialPlatform",
+      "RelativePath": "images/17432852-old-wood-tree-texture-background-pattern#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t1a01d5fl2",
+      "Integrity": "4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\17432852-old-wood-tree-texture-background-pattern.jpg"
+    },
+    {
       "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\5 sec video ad (sample 2).mp4",
       "SourceId": "MicroSocialPlatform",
       "SourceType": "Discovered",
@@ -1422,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\9.png"
+    },
+    {
+      "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\alan shearer.jpg",
+      "SourceId": "MicroSocialPlatform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\",
+      "BasePath": "_content/MicroSocialPlatform",
+      "RelativePath": "images/alan shearer#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dg1s8xthsv",
+      "Integrity": "XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\alan shearer.jpg"
     },
     {
       "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\Branislav-Ivanovic-Chelsea.jpg",
@@ -1485,6 +1527,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\default_group_pic.png"
+    },
+    {
+      "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\default_post_image.png",
+      "SourceId": "MicroSocialPlatform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\",
+      "BasePath": "_content/MicroSocialPlatform",
+      "RelativePath": "images/default_post_image#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d3ribbs20i",
+      "Integrity": "V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\default_post_image.png"
     },
     {
       "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\Didier_Drogba_Champions_League_Winner.jpg",
@@ -5677,6 +5740,88 @@
       ]
     },
     {
+      "Route": "images/17432852-old-wood-tree-texture-background-pattern.jpg",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\17432852-old-wood-tree-texture-background-pattern.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "576533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo="
+        }
+      ]
+    },
+    {
+      "Route": "images/17432852-old-wood-tree-texture-background-pattern.t1a01d5fl2.jpg",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\17432852-old-wood-tree-texture-background-pattern.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "576533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t1a01d5fl2"
+        },
+        {
+          "Name": "label",
+          "Value": "images/17432852-old-wood-tree-texture-background-pattern.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo="
+        }
+      ]
+    },
+    {
       "Route": "images/5 sec video ad (sample 2).e1zuaxa2pr.mp4",
       "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\5 sec video ad (sample 2).mp4",
       "Selectors": [],
@@ -5837,6 +5982,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-03joRTSaDz2L3db9XAYxHO4xvkQHUDki4bNyuJnsWqk="
+        }
+      ]
+    },
+    {
+      "Route": "images/alan shearer.dg1s8xthsv.jpg",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\alan shearer.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87300"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dg1s8xthsv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/alan shearer.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA="
+        }
+      ]
+    },
+    {
+      "Route": "images/alan shearer.jpg",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\alan shearer.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87300"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA="
         }
       ]
     },
@@ -6083,6 +6310,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w="
+        }
+      ]
+    },
+    {
+      "Route": "images/default_post_image.d3ribbs20i.png",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\default_post_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1791"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d3ribbs20i"
+        },
+        {
+          "Name": "label",
+          "Value": "images/default_post_image.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U="
+        }
+      ]
+    },
+    {
+      "Route": "images/default_post_image.png",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\default_post_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1791"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U="
         }
       ]
     },

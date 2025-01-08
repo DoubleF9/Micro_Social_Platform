@@ -50,18 +50,26 @@
                         <div class="d-flex gap-2">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <form asp-action="JoinGroupRequest" method="post">
-                                    <input type="hidden" name="groupId" value="@Model.Id" />
-                                    <button type="submit" class="btn btn-primary btn-sm">
-                                        <i class="bi bi-person-plus me-1"></i> Join
-                                    </button>
-                                </form>
+                                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                                var isMember = Model.UserGroups.Any(ug => ug.UserId == userId && ug.Status == true);
 
-                                <a asp-action="GroupMessages" asp-controller="Messages"
-                                   asp-route-groupId="@Model.Id"
-                                   class="btn btn-outline-info btn-sm">
-                                    <i class="bi bi-chat-dots me-1"></i> Chat
-                                </a>
+                                @if (!isMember)
+                                {
+                                    <form asp-action="JoinGroupRequest" method="post">
+                                        <input type="hidden" name="groupId" value="@Model.Id" />
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="bi bi-person-plus me-1"></i> Join
+                                        </button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <a asp-action="GroupMessages" asp-controller="Messages"
+                                       asp-route-groupId="@Model.Id"
+                                       class="btn btn-outline-info btn-sm">
+                                        <i class="bi bi-chat-dots me-1"></i> Chat
+                                    </a>
+                                }
                             }
                         </div>
                     </div>
@@ -175,3 +183,5 @@
         }
     </div>
 </div>
+
+

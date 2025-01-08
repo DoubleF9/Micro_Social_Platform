@@ -38,6 +38,20 @@
                                     @message.Timestamp.ToString("HH:mm")
                                 </small>
                             </div>
+                            @if (isCurrentUser)
+                            {
+                                <div class="d-flex justify-content-end mt-1">
+                                    <button class="btn btn-sm btn-outline-secondary me-1" title="Edit">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <form asp-action="DeleteMessage" method="post" class="d-inline">
+                                        <input type="hidden" name="id" value="@message.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -79,3 +93,6 @@
         });
     </script>
 }
+
+
+

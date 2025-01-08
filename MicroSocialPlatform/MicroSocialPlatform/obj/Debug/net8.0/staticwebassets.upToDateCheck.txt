@@ -1,11 +1,14 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\1.png
+wwwroot\images\17432852-old-wood-tree-texture-background-pattern.jpg
 wwwroot\images\5 sec video ad (sample 2).mp4
 wwwroot\images\9.png
+wwwroot\images\alan shearer.jpg
 wwwroot\images\Branislav-Ivanovic-Chelsea.jpg
 wwwroot\images\bush.jpg
 wwwroot\images\default_group_pic.png
+wwwroot\images\default_post_image.png
 wwwroot\images\Didier_Drogba_Champions_League_Winner.jpg
 wwwroot\images\fabregas.jpg
 wwwroot\images\Fifa-World-Cup-2014-Brazil-Wallpaper.jpg

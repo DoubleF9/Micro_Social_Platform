@@ -2551,6 +2551,88 @@
       ]
     },
     {
+      "Route": "images/17432852-old-wood-tree-texture-background-pattern.jpg",
+      "AssetFile": "images/17432852-old-wood-tree-texture-background-pattern.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "576533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo="
+        }
+      ]
+    },
+    {
+      "Route": "images/17432852-old-wood-tree-texture-background-pattern.t1a01d5fl2.jpg",
+      "AssetFile": "images/17432852-old-wood-tree-texture-background-pattern.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "576533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t1a01d5fl2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Tei1pAUx2ojB9vnOuPm0kEDsSFbnG/EqXIPhAZ10eo="
+        },
+        {
+          "Name": "label",
+          "Value": "images/17432852-old-wood-tree-texture-background-pattern.jpg"
+        }
+      ]
+    },
+    {
       "Route": "images/5 sec video ad (sample 2).e1zuaxa2pr.mp4",
       "AssetFile": "images/5 sec video ad (sample 2).mp4",
       "Selectors": [],
@@ -2961,6 +3043,88 @@
       ]
     },
     {
+      "Route": "images/alan shearer.dg1s8xthsv.jpg",
+      "AssetFile": "images/alan shearer.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87300"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dg1s8xthsv"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA="
+        },
+        {
+          "Name": "label",
+          "Value": "images/alan shearer.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "images/alan shearer.jpg",
+      "AssetFile": "images/alan shearer.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87300"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XTKPzYLHnFcDK6LwW+SAA576dqAJ+QHC4+QdvvnowaA="
+        }
+      ]
+    },
+    {
       "Route": "images/bush.jpg",
       "AssetFile": "images/bush.jpg",
       "Selectors": [],
@@ -3121,6 +3285,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-5XV6noCfKtHzADANeWbPK8QNNlnDFKNFnnckSCbiD3w="
+        }
+      ]
+    },
+    {
+      "Route": "images/default_post_image.d3ribbs20i.png",
+      "AssetFile": "images/default_post_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1791"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d3ribbs20i"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U="
+        },
+        {
+          "Name": "label",
+          "Value": "images/default_post_image.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/default_post_image.png",
+      "AssetFile": "images/default_post_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1791"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 08 Jan 2025 20:11:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-V2/pn7/GR0bv2T16pCOU9Ex5g84cPTwklAKpLyuXe6U="
         }
       ]
     },

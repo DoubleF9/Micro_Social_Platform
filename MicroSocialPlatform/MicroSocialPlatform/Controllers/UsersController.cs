@@ -113,7 +113,7 @@ namespace MicroSocialPlatform.Controllers
         // POST: Users/EditProfile
         [HttpPost]
         [Authorize(Roles = "User,Editor,Admin")]
-        public async Task<IActionResult> Edit(string id, ApplicationUser model, IFormFile ProfilePicture)
+        public async Task<IActionResult> Edit(string id, ApplicationUser model, IFormFile? ProfilePicture)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null || (user.Id != id && !User.IsInRole("Admin")))
@@ -130,39 +130,41 @@ namespace MicroSocialPlatform.Controllers
                 return NotFound();
             }
 
+            if (ProfilePicture != null && ProfilePicture.Length > 0)
+            {
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+                var fileExtension = Path.GetExtension(ProfilePicture.FileName).ToLower();
+
+                if (!allowedExtensions.Contains(fileExtension))
+                {
+                    ModelState.AddModelError("ProfilePicture", "The file must be an image (jpg, jpeg, png, gif).");
+                    return View(profileUser);
+                }
+
+                var storagePath = Path.Combine(_env.WebRootPath, "profile_pictures", ProfilePicture.FileName);
+                var databaseFileName = "/profile_pictures/" + ProfilePicture.FileName;
+
+                var directory = Path.GetDirectoryName(storagePath);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                using (var fileStream = new FileStream(storagePath, FileMode.Create))
+                {
+                    await ProfilePicture.CopyToAsync(fileStream);
+                }
+
+                ModelState.Remove(nameof(profileUser.ProfilePicture));
+                profileUser.ProfilePicture = databaseFileName;
+            }
+
             if (ModelState.IsValid)
             {
                 profileUser.FirstName = model.FirstName;
                 profileUser.LastName = model.LastName;
                 profileUser.Description = model.Description;
                 profileUser.IsPublic = model.IsPublic;
-
-                if (ProfilePicture != null && ProfilePicture.Length > 0)
-                {
-                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-                    var fileExtension = Path.GetExtension(ProfilePicture.FileName).ToLower();
-                    if (!allowedExtensions.Contains(fileExtension))
-                    {
-                        ModelState.AddModelError("ProfilePicture", "The file must be an image (jpg, jpeg, png, gif).");
-                        return View(profileUser);
-                    }
-
-                    var storagePath = Path.Combine(_env.WebRootPath, "profile_pictures", ProfilePicture.FileName);
-                    var databaseFileName = "/profile_pictures/" + ProfilePicture.FileName;
-
-                    var directory = Path.GetDirectoryName(storagePath);
-                    if (!Directory.Exists(directory))
-                    {
-                        Directory.CreateDirectory(directory);
-                    }
-
-                    using (var fileStream = new FileStream(storagePath, FileMode.Create))
-                    {
-                        await ProfilePicture.CopyToAsync(fileStream);
-                    }
-
-                    profileUser.ProfilePicture = databaseFileName;
-                }
 
                 var result = await _userManager.UpdateAsync(profileUser);
                 if (result.Succeeded)
@@ -181,22 +183,7 @@ namespace MicroSocialPlatform.Controllers
             return View(profileUser);
         }
 
-        // GET: Users/Messages
-        [Authorize(Roles = "User,Editor,Admin")]
-        public async Task<IActionResult> Messages()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                return Challenge();
-            }
-
-            var messages = await _context.Messages
-                .Where(m => m.SenderId == user.Id || m.ReceiverId == user.Id)
-                .ToListAsync();
-
-            return View(messages);
-        }
+        
 
         // GET: Users/CreateMessage
         [Authorize(Roles = "User,Editor,Admin")]
@@ -247,11 +234,69 @@ namespace MicroSocialPlatform.Controllers
 
             var posts = await _context.Posts
                 .Where(p => followedUserIds.Contains(p.UserId))
+                .Include(p => p.User) // Include the User entity
                 .OrderByDescending(p => p.Date)
                 .ToListAsync();
 
             return View(posts);
         }
+        public async Task<IActionResult> Messages()
+        {
+            ViewBag.Title = "Conversations";
+            ViewBag.DirectMessages = await GetDirectMessagesAsync() ?? new List<Message>(); // Ensure it's not null
+            ViewBag.GroupMessages = await GetGroupMessagesAsync() ?? new List<Group>(); // Ensure it's not null
+
+            return View();
+        }
+
+        private async Task<List<Message>> GetDirectMessagesAsync()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return new List<Message>();
+            }
+
+            var messages = await _context.Messages
+                .Where(m => m.ReceiverId == user.Id)
+                .Include(m => m.Sender) // Eagerly load the Sender property
+                .OrderByDescending(m => m.Timestamp)
+                .ToListAsync();
+
+            // Group by SenderId and select the latest message from each sender
+            //orderByDescending is used to get the latest message from each sender
+            var distinctMessages = messages
+            .GroupBy(m => m.SenderId)
+            .Select(g => g.OrderByDescending(m => m.Timestamp).First())
+            .OrderByDescending(m => m.Timestamp)
+            .ToList();
+
+            return distinctMessages;
+        }
+
+        private async Task<List<Group>> GetGroupMessagesAsync()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return new List<Group>();
+            }
+
+            return await _context.Groups
+                .Where(g => g.UserGroups.Any(ug => ug.UserId == user.Id))
+                .ToListAsync();
+
+        }
+
+
+        private List<Group> GetGroupMessages()
+        {
+            // Replace with actual logic to retrieve group messages
+            return new List<Group>();
+        }
+
+
+
     }
 }
 

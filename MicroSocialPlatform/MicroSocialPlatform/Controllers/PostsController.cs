@@ -93,61 +93,62 @@ namespace MicroSocialPlatform.Controllers
         }
         [HttpPost]
         [Authorize(Roles = "User,Editor,Admin")]
-        public async Task<IActionResult> New(Post post, IFormFile Image)
+        public async Task<IActionResult> New(Post post, IFormFile? Image)
         {
-            post.Date = DateTime.Now;
-            post.UserId = _userManager.GetUserId(User);
+            // Set default image if no image is uploaded
+            post.Image = "/images/default_post_image.png";
 
             if (Image != null && Image.Length > 0)
             {
-                // Verificăm extensia
                 var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".mp4", ".mov" };
+
                 var fileExtension = Path.GetExtension(Image.FileName).ToLower();
+
                 if (!allowedExtensions.Contains(fileExtension))
                 {
                     ModelState.AddModelError("PostImage", "The file must be an image (jpg, jpeg, png, gif) or a video (mp4, mov).");
                     return View(post);
                 }
 
-                // Cale stocare
                 var storagePath = Path.Combine(_env.WebRootPath, "images", Image.FileName);
                 var databaseFileName = "/images/" + Image.FileName;
 
-                // Creare director dacă nu există
                 var directory = Path.GetDirectoryName(storagePath);
                 if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
                 }
 
-                // Salvare fișier
                 using (var fileStream = new FileStream(storagePath, FileMode.Create))
                 {
                     await Image.CopyToAsync(fileStream);
                 }
-
                 ModelState.Remove(nameof(post.Image));
                 post.Image = databaseFileName;
             }
 
-            if (TryValidateModel(post))
+            if (ModelState.IsValid)
             {
-                // Adăugare postare
+                post.Date = DateTime.Now;
+                post.UserId = _userManager.GetUserId(User);
+
                 db.Posts.Add(post);
                 await db.SaveChangesAsync();
 
                 TempData["Message"] = "Post created successfully!";
                 TempData["Alert"] = "alert-success";
-
-                // Redirecționare după succes
                 return RedirectToAction("Feed", "Users");
             }
-
-            TempData["Message"] = "Failed to create post. Please check the form for errors.";
-            TempData["Alert"] = "alert-danger";
-
-            return View(post);
+            else
+            {
+                TempData["Message"] = "Failed to create post. Please check the form for errors.";
+                TempData["Alert"] = "alert-danger";
+                return View(post);
+            }
         }
+
+
+
 
         [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Edit(int id)
@@ -173,7 +174,7 @@ namespace MicroSocialPlatform.Controllers
 
         [HttpPost]
         [Authorize(Roles = "User,Editor,Admin")]
-        public async Task<IActionResult> Edit(int id, Post requestPost, IFormFile Image)
+        public async Task<IActionResult> Edit(int id, Post requestPost, IFormFile? Image)
         {
             var post = db.Posts.Find(id);
 
@@ -193,10 +194,10 @@ namespace MicroSocialPlatform.Controllers
                     {
                         var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif", ".mp4", ".mov" };
                         var fileExtension = Path.GetExtension(Image.FileName).ToLower();
+
                         if (!allowedExtensions.Contains(fileExtension))
                         {
                             ModelState.AddModelError("PostImage", "The file must be an image (jpg, jpeg, png, gif) or a video (mp4, mov).");
-
                             return View(post);
                         }
 
@@ -214,20 +215,27 @@ namespace MicroSocialPlatform.Controllers
                             await Image.CopyToAsync(fileStream);
                         }
 
+                        ModelState.Remove(nameof(post.Image));
                         post.Image = databaseFileName;
                     }
+                    else
+                    {
+                        // Retain the existing image
+                        post.Image = requestPost.Image;
+                    }
 
-                    TempData["Message"] = "Post edited successully!";
-                    TempData["messageType"] = "alert-success";
+                    TempData["Message"] = "Post edited successfully!";
+                    TempData["Alert"] = "alert-success";
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Feed", "Users");
                 }
                 else
                 {
                     TempData["Message"] = "You do not have permission to edit posts created by other users.";
                     TempData["Alert"] = "alert-danger";
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Feed", "Users");
+
                 }
             }
             else
@@ -235,6 +243,8 @@ namespace MicroSocialPlatform.Controllers
                 return View(post);
             }
         }
+
+
         [HttpPost]
         [Authorize(Roles = "User,Editor,Admin")]
         public ActionResult Delete(int id)
