@@ -1,87 +1,59 @@
-﻿@model IEnumerable<MicroSocialPlatform.Models.Message>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<div class="container py-5">
-    <!-- Header Section -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="d-flex align-items-center gap-2 m-0">
-            <i class="bi bi-envelope"></i>
-            Messages
-        </h2>
-        <a href="@Url.Action("CreateMessage", "Users")"
-           class="btn btn-primary d-flex align-items-center gap-2">
-            <i class="bi bi-plus-lg"></i>
-            New Message
-        </a>
-    </div>
+﻿@{
+    ViewBag.Title = "Conversations";
+}
 
-    <!-- Messages Table -->
-    <div class="card border-0 shadow-sm rounded-4">
+<div class="container py-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-transparent border-0 pt-4 px-4">
+            <h2 class="d-flex align-items-center gap-2 m-0">
+                <i class="bi bi-chat-dots"></i>
+                Conversations
+            </h2>
+        </div>
+
         <div class="card-body p-4">
-            <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th scope="col">
-                                <i class="bi bi-person-fill me-2"></i>Sender
-                            </th>
-                            <th scope="col">
-                                <i class="bi bi-person me-2"></i>Receiver
-                            </th>
-                            <th scope="col">
-                                <i class="bi bi-chat-text me-2"></i>Content
-                            </th>
-                            <th scope="col">
-                                <i class="bi bi-clock me-2"></i>Timestamp
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var message in Model)
-                        {
-                            <tr>
-                                <td>@message.SenderId</td>
-                                <td>@message.ReceiverId</td>
-                                <td>@message.Content</td>
-                                <td>
-                                    <small class="text-muted">
-                                        @message.Timestamp.ToString("MMM dd, yyyy HH:mm")
-                                    </small>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+            <h3>Direct Messages</h3>
+            <ul class="list-group mb-4">
+                @if (ViewBag.DirectMessages != null)
+                {
+                    @foreach (var message in ViewBag.DirectMessages)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>@message.Receiver.UserName</span>
+                            <a href="@Url.Action("DirectMessages", new { userId = message.SenderId })" class="btn btn-primary btn-sm">View Messages</a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li class="list-group-item">No direct messages available.</li>
+                }
+            </ul>
+
+            <h3>Group Messages</h3>
+            <ul class="list-group">
+                @if (ViewBag.GroupMessages != null)
+                {
+                    @foreach (var group in ViewBag.GroupMessages)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>@group.Name</span>
+                            <a href="@Url.Action("GroupMessages", "Messages", new { groupId = group.Id })" class="btn btn-primary btn-sm">View Messages</a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li class="list-group-item">No group messages available.</li>
+                }
+            </ul>
         </div>
     </div>
 </div>
 
-<style>
-    .card {
-        transition: all 0.3s ease;
-    }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
-        }
-
-    .btn-primary {
-        background: linear-gradient(to right, #0d6efd, #0b5ed7);
-        border: none;
-        transition: all 0.2s;
-    }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(13,110,253,0.2);
-        }
-
-    .table > :not(caption) > * > * {
-        padding: 1rem;
-    }
-</style>
-
 @section Scripts {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
