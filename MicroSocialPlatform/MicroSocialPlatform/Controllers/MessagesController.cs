@@ -59,6 +59,14 @@ namespace MicroSocialPlatform.Controllers
             {
                 return Challenge();
             }
+            //Verificam daca utilizatorul curent este membru al grupului
+            var userGroup = await db.UserGroups
+                .FirstOrDefaultAsync(ug => ug.UserId == currentUser.Id && ug.GroupId == groupId);
+            if (userGroup == null)
+            {
+                TempData["Error"] = "You are not a member of this group.";
+                return RedirectToAction("Index", "Groups");
+            }
 
             var messages = await db.Messages
                 .Include(m => m.Sender) // Include sender information
@@ -135,6 +143,121 @@ namespace MicroSocialPlatform.Controllers
             await db.SaveChangesAsync();
 
             return RedirectToAction("GroupMessages", new { groupId = groupId });
+        }
+     [HttpPost]
+public async Task<IActionResult> DeleteMessage(int id)
+{
+    var currentUser = await _userManager.GetUserAsync(User);
+    if (currentUser == null)
+    {
+        return Challenge();
+    }
+
+    var message = await db.Messages.FindAsync(id);
+    if (message == null)
+    {
+        return NotFound();
+    }
+
+    if (message.SenderId != currentUser.Id)
+    {
+        return Forbid();
+    }
+
+    db.Messages.Remove(message);
+    await db.SaveChangesAsync();
+
+    // Redirecționează utilizatorul înapoi la pagina de mesaje
+    if (message.ReceiverId != null)
+    {
+        return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });
+    }
+    else if (message.GroupId != null)
+    {
+        return RedirectToAction("GroupMessages", new { groupId = message.GroupId });
+    }
+
+    return RedirectToAction("Index", "Home");
+}
+        [HttpGet]
+        [Authorize(Roles = "User,Editor,Admin")]
+        public async Task<IActionResult> EditMessage(int id)
+        {
+            var message = await db.Messages.FirstOrDefaultAsync(m => m.Id == id);
+            if (message == null)
+            {
+                return NotFound();
+            }
+
+            // Check if the current user is the owner of the message or an admin
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (message.SenderId != currentUser.Id && !User.IsInRole("Admin"))
+            {
+                TempData["Message"] = "You do not have permission to edit this message";
+                TempData["Alert"] = "alert-danger";
+
+                if (message.ReceiverId != null)
+                {
+                    return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });
+                }
+                else if (message.GroupId != null)
+                {
+                    return RedirectToAction("GroupMessages", new { groupId = message.GroupId });
+                }
+            }
+
+            ViewBag.Message = message;
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "User,Editor,Admin")]
+        public async Task<IActionResult> EditMessage(int id, [Bind("Content")] Message requestMessage)
+        {
+            var message = await db.Messages.FirstOrDefaultAsync(m => m.Id == id);
+            if (message == null)
+            {
+                return NotFound();
+            }
+
+            // Check if the current user is the owner of the message or an admin
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null || (message.SenderId != currentUser.Id && !User.IsInRole("Admin")))
+            {
+                TempData["Message"] = "You do not have permission to edit this message";
+                TempData["Alert"] = "alert-danger";
+                return RedirectToAction("Index", "Posts");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                TempData["EditMessageError"] = "Message content is required";
+                // Redirect the user back to the messages page
+                if (message.ReceiverId != null)
+                {
+                    return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });
+                }
+                else if (message.GroupId != null)
+                {
+                    return RedirectToAction("GroupMessages", new { groupId = message.GroupId });
+                }
+            }
+
+            message.Content = requestMessage.Content;
+            message.Timestamp = DateTime.Now;
+            await db.SaveChangesAsync();
+
+            // Redirect the user back to the messages page
+            if (message.ReceiverId != null)
+            {
+                return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });
+            }
+            else if (message.GroupId != null)
+            {
+                return RedirectToAction("GroupMessages", new { groupId = message.GroupId });
+            }
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
