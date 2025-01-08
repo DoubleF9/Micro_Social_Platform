@@ -19,8 +19,9 @@
                     @foreach (var message in ViewBag.DirectMessages)
                     {
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>@message.Receiver.UserName</span>
-                            <a href="@Url.Action("DirectMessages", new { userId = message.SenderId })" class="btn btn-primary btn-sm">View Messages</a>
+                            <span>@message.Sender.FirstName @message.Sender.LastName</span>
+
+                            <a href="@Url.Action("DirectMessages", "Messages", new { userId = message.SenderId })" class="btn btn-primary btn-sm">View Messages</a>
                         </li>
                     }
                 }
