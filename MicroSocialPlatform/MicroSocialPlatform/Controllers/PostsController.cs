@@ -135,9 +135,16 @@ namespace MicroSocialPlatform.Controllers
                 // Adăugare postare
                 db.Posts.Add(post);
                 await db.SaveChangesAsync();
+
+                TempData["Message"] = "Post created successfully!";
+                TempData["Alert"] = "alert-success";
+
                 // Redirecționare după succes
-                return RedirectToAction("Index");
+                return RedirectToAction("Feed", "Users");
             }
+
+            TempData["Message"] = "Failed to create post. Please check the form for errors.";
+            TempData["Alert"] = "alert-danger";
 
             return View(post);
         }

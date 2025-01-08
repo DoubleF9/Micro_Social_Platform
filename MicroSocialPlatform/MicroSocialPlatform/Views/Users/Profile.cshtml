@@ -24,7 +24,7 @@
             <p class="text-muted mb-4">@Model.Description</p>
 
             <div class="d-flex justify-content-center gap-3">
-                @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
+                @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id && !ViewBag.IsFollowing)
                 {
                     <form asp-action="SendFollowRequest" asp-controller="Follows" method="post">
                         <input type="hidden" name="followedId" value="@Model.Id" />
@@ -33,7 +33,9 @@
                             Follow
                         </button>
                     </form>
-
+                }
+                @if (User.Identity.IsAuthenticated && User.FindFirstValue(ClaimTypes.NameIdentifier) != Model.Id)
+                {
                     <a asp-action="DirectMessages"
                        asp-controller="Messages"
                        asp-route-userId="@Model.Id"
@@ -42,6 +44,36 @@
                         Message
                     </a>
                 }
+                @if (User.Identity.IsAuthenticated && (User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.Id || User.IsInRole("Admin")))
+                {
+                    <div class="d-flex gap-3 mt-4">
+                        <a class="btn btn-primary d-flex align-items-center gap-2"
+                           asp-controller="Users"
+                           asp-action="Edit"
+                           asp-route-id="@Model.Id">
+                            <i class="bi bi-pencil-square"></i>
+                            Edit Profile
+                        </a>
+                    </div>
+                }
+            </div>
+            </div>
+
+
+            <!-- Followers, Following, and Posts Counts -->
+            <div class="d-flex justify-content-center gap-4 mt-4">
+                <div>
+                    <h6 class="mb-0">@ViewBag.FollowersCount</h6>
+                    <small class="text-muted">Followers</small>
+                </div>
+                <div>
+                    <h6 class="mb-0">@ViewBag.FollowingCount</h6>
+                    <small class="text-muted">Following</small>
+                </div>
+                <div>
+                    <h6 class="mb-0">@ViewBag.PostsCount</h6>
+                    <small class="text-muted">Posts</small>
+                </div>
             </div>
         </div>
     </div>
@@ -61,6 +93,15 @@
                     <div class="col">
                         <div class="card h-100 shadow-sm border-0 rounded-4">
                             @await Html.PartialAsync("PostInfo", post)
+                            <div class="card-footer bg-transparent border-0 p-3">
+                                <a class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2"
+                                   asp-controller="Posts"
+                                   asp-action="Show"
+                                   asp-route-id="@post.Id">
+                                    <i class="bi bi-arrow-right-circle"></i>
+                                    Read More
+                                </a>
+                            </div>
                         </div>
                     </div>
                 }
@@ -111,3 +152,8 @@
 @section Scripts {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 }
+
+
+
+
+

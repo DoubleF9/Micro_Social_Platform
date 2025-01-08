@@ -40,6 +40,8 @@ namespace MicroSocialPlatform.Controllers
 
         [Authorize(Roles = "User,Editor,Admin")]
         [HttpGet]
+        [Authorize(Roles = "User,Editor,Admin")]
+        [HttpGet]
         public async Task<IActionResult> Profile(string id)
         {
             if (TempData.ContainsKey("message"))
@@ -48,8 +50,14 @@ namespace MicroSocialPlatform.Controllers
                 ViewBag.Alert = TempData["Alert"];
             }
 
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
             var user = await _context.Users
-                .Include(u => u.Posts)
+                .Include(u => u.Posts.OrderByDescending(p => p.Date)) // Order posts by date descending
                 .FirstOrDefaultAsync(u => u.Id == id);
 
             if (user == null)
@@ -57,13 +65,27 @@ namespace MicroSocialPlatform.Controllers
                 return NotFound();
             }
 
-            if (user.IsPublic)
+            // Get counts
+            var followersCount = await _context.Follows.CountAsync(f => f.FollowedId == id && f.IsAccepted);
+            var followingCount = await _context.Follows.CountAsync(f => f.FollowerId == id && f.IsAccepted);
+            var postsCount = user.Posts.Count;
+
+            ViewBag.FollowersCount = followersCount;
+            ViewBag.FollowingCount = followingCount;
+            ViewBag.PostsCount = postsCount;
+
+            // Check if the current user already follows this user
+            var isFollowing = await _context.Follows.AnyAsync(f => f.FollowerId == currentUser.Id && f.FollowedId == id && f.IsAccepted);
+            ViewBag.IsFollowing = isFollowing;
+
+            // Allow viewing own profile and posts or if the user is followed by the current user
+            if (user.IsPublic || currentUser.Id == id || isFollowing)
             {
                 return View(user);
             }
             else
             {
-                return View("BasicProfile",user);
+                return View("BasicProfile", user);
             }
         }
 
@@ -204,5 +226,36 @@ namespace MicroSocialPlatform.Controllers
             }
             return View(message);
         }
+
+        // GET: Users/Feed
+        [Authorize(Roles = "User,Editor,Admin")]
+        [HttpGet]
+        public async Task<IActionResult> Feed()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            var followedUserIds = await _context.Follows
+                .Where(f => f.FollowerId == currentUser.Id && f.IsAccepted)
+                .Select(f => f.FollowedId)
+                .ToListAsync();
+
+            followedUserIds.Add(currentUser.Id); // Include current user's own posts
+
+            var posts = await _context.Posts
+                .Where(p => followedUserIds.Contains(p.UserId))
+                .OrderByDescending(p => p.Date)
+                .ToListAsync();
+
+            return View(posts);
+        }
     }
 }
+
+
+
+
+

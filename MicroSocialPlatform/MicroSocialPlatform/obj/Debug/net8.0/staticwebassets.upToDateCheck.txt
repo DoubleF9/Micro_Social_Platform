@@ -4,9 +4,13 @@ wwwroot\images\1.png
 wwwroot\images\5 sec video ad (sample 2).mp4
 wwwroot\images\9.png
 wwwroot\images\Branislav-Ivanovic-Chelsea.jpg
+wwwroot\images\bush.jpg
 wwwroot\images\default_group_pic.png
 wwwroot\images\Didier_Drogba_Champions_League_Winner.jpg
 wwwroot\images\fabregas.jpg
+wwwroot\images\Fifa-World-Cup-2014-Brazil-Wallpaper.jpg
+wwwroot\images\football black.png
+wwwroot\images\fractal.jpg
 wwwroot\images\harry the hamster.jpg
 wwwroot\images\icons-5235125_1280.png
 wwwroot\images\jackie chan.jpg
@@ -74,10 +78,13 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\profile_pictures\admin.jpg
 wwwroot\profile_pictures\alan shearer.jpg
+wwwroot\profile_pictures\blood.jpg
 wwwroot\profile_pictures\Branislav-Ivanovic-Chelsea.jpg
 wwwroot\profile_pictures\cholo.png
 wwwroot\profile_pictures\cristiano.jpg
+wwwroot\profile_pictures\harry the hamster.jpg
 wwwroot\profile_pictures\icons-5235125_1280.png
+wwwroot\profile_pictures\morbius.jpg
 wwwroot\profile_pictures\shark.jpg
 wwwroot\profile_pictures\user.jpeg
 wwwroot\profile_pictures\user.jpeg.jfif

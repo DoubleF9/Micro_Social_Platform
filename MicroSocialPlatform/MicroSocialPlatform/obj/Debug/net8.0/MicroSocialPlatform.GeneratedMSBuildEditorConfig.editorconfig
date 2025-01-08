@@ -17,137 +17,141 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MicroSocialPlatform
 build_property.RootNamespace = MicroSocialPlatform
-build_property.ProjectDir = C:\Users\Asus\Documents\GitHub\Micro_Social_Platform\MicroSocialPlatform\MicroSocialPlatform\
+build_property.ProjectDir = C:\Users\turcu\facultate\ASP\Micro_Social_Platform\Micro_Social_Platform\MicroSocialPlatform\MicroSocialPlatform\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Asus\Documents\GitHub\Micro_Social_Platform\MicroSocialPlatform\MicroSocialPlatform
+build_property.MSBuildProjectDirectory = C:\Users\turcu\facultate\ASP\Micro_Social_Platform\Micro_Social_Platform\MicroSocialPlatform\MicroSocialPlatform
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Follows/Index.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Follows/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sbG93c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/Edit.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/Index.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/New.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXE5ldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/Show.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Groups/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXFNob3cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Home/Index.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Home/Privacy.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Messages/DirectMessages.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Messages/DirectMessages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGlyZWN0TWVzc2FnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Messages/GroupMessages.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Messages/GroupMessages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcR3JvdXBNZXNzYWdlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Edit.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Index.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/New.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcTmV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Show.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Posts/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcU2hvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/Error.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/PostInfo.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/PostInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvc3RJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/BasicProfile.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/BasicProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQmFzaWNQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/CreateMessage.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/CreateMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Edit.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Messages.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Feed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRmVlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Messages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTWVzc2FnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Profile.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Search.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Users/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/_ViewImports.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/_ViewStart.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Documents/GitHub/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/_Layout.cshtml]
+[C:/Users/turcu/facultate/ASP/Micro_Social_Platform/Micro_Social_Platform/MicroSocialPlatform/MicroSocialPlatform/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s954jndjxl

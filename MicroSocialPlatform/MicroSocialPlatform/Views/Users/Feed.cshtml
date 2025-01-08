@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MicroSocialPlatform.Models.Post>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<div class="container py-5">
+    <!-- Alert Message -->
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert @TempData["Alert"] d-flex align-items-center" role="alert">
+            <i class="bi bi-info-circle me-2"></i>
+            @TempData["Message"]
+        </div>
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Feed</h2>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="btn btn-primary d-flex align-items-center gap-2"
+               asp-controller="Posts"
+               asp-action="New">
+                <i class="bi bi-plus-circle"></i>
+                New Post
+            </a>
+        }
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var post in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4">
+                    @await Html.PartialAsync("PostInfo", post)
+                    <div class="card-footer bg-transparent border-0 p-3">
+                        <a class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2"
+                           asp-controller="Posts"
+                           asp-action="Show"
+                           asp-route-id="@post.Id">
+                            <i class="bi bi-arrow-right-circle"></i>
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+        }
+
+    .btn {
+        transition: all 0.2s;
+    }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+    .btn-primary {
+        background: linear-gradient(to right, #0d6efd, #0b5ed7);
+        border: none;
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+}
+
+
+
+

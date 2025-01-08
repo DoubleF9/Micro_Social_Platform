@@ -52,8 +52,14 @@ namespace MicroSocialPlatform.Controllers
                 .Include(f => f.Follower)
                 .ToListAsync();
 
+            var following = await db.Follows
+                .Where(f => f.FollowerId == user.Id && f.IsAccepted)
+                .Include(f => f.Followed)
+                .ToListAsync();
+
             ViewBag.Followers = followers;
             ViewBag.FollowRequests = followRequests;
+            ViewBag.Following = following;
 
             return View();
         }
@@ -79,17 +85,24 @@ namespace MicroSocialPlatform.Controllers
                 return RedirectToAction("Profile", "Users", new { id = followedId });
             }
 
+            // Check if the followed user's profile is public
+            var followedUser = await _userManager.FindByIdAsync(followedId);
+            if (followedUser == null)
+            {
+                return NotFound();
+            }
+
             var follow = new Follow
             {
                 FollowerId = user.Id,
                 FollowedId = followedId,
-                IsAccepted = false
+                IsAccepted = followedUser.IsPublic // Automatically accept if the profile is public
             };
 
             db.Follows.Add(follow);
             await db.SaveChangesAsync();
 
-            TempData["message"] = "Follow request sent.";
+            TempData["message"] = follow.IsAccepted ? "You are now following this user." : "Follow request sent.";
             TempData["messageType"] = "alert-success";
 
             return RedirectToAction("Profile", "Users", new { id = followedId });
