@@ -1,0 +1,7 @@
+﻿@model MicroSocialPlatform.Models.Message
+
+<form method="post" asp-action="EditMessage">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <textarea name="content">@Model.Content</textarea>
+    <button type="submit">Save</button>
+</form>

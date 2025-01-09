@@ -157,6 +157,48 @@ namespace MicroSocialPlatform.Controllers
             var message = await db.Messages.FindAsync(id);
             if (message == null)
             {
+                TempData["Error"] = "Message not found.";
+                return RedirectToAction("DirectMessages", new { userId = message?.ReceiverId });
+            }
+
+            if (message.SenderId != currentUser.Id && !User.IsInRole("Admin"))
+            {
+                TempData["Error"] = "You are not authorized to delete this message.";
+                return Forbid();
+            }
+
+            db.Messages.Remove(message);
+            await db.SaveChangesAsync();
+
+            TempData["Success"] = "Message deleted successfully.";
+
+            if (!string.IsNullOrEmpty(message.ReceiverId))
+            {
+                return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });
+            }
+            else if (message.GroupId.HasValue)
+            {
+                return RedirectToAction("GroupMessages", new { groupId = message.GroupId.Value });
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> EditMessage(int id)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            var message = await db.Messages.FindAsync(id);
+            if (message == null)
+            {
                 return NotFound();
             }
 
@@ -165,10 +207,43 @@ namespace MicroSocialPlatform.Controllers
                 return Forbid();
             }
 
-            db.Messages.Remove(message);
+            return PartialView("_EditMessagePartial", message);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> EditMessage(int id, string content)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            var message = await db.Messages.FindAsync(id);
+            if (message == null)
+            {
+                TempData["Error"] = "Message not found.";
+                return RedirectToAction("DirectMessages", new { userId = message?.ReceiverId });
+            }
+
+            if (message.SenderId != currentUser.Id)
+            {
+                TempData["Error"] = "You are not authorized to edit this message.";
+                return Forbid();
+            }
+
+            if (string.IsNullOrEmpty(content))
+            {
+                TempData["Error"] = "Message content is required.";
+                return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });
+            }
+
+            message.Content = content;
             await db.SaveChangesAsync();
 
-            // Redirect the user back to the appropriate messages page
+            TempData["Success"] = "Message edited successfully.";
+
             if (!string.IsNullOrEmpty(message.ReceiverId))
             {
                 return RedirectToAction("DirectMessages", new { userId = message.ReceiverId });

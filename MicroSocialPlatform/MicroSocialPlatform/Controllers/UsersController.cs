@@ -240,6 +240,8 @@ namespace MicroSocialPlatform.Controllers
 
             return View(posts);
         }
+
+        [Authorize(Roles = "User,Editor,Admin")]
         public async Task<IActionResult> Messages()
         {
             ViewBag.Title = "Conversations";

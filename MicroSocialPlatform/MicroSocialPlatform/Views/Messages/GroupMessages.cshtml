@@ -15,6 +15,18 @@
         </div>
 
         <div class="card-body p-4 messages-container" style="height: 500px; overflow-y: auto;">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Success"]
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"]
+                </div>
+            }
             @foreach (var message in Model)
             {
                 bool isCurrentUser = message.SenderId == ViewBag.CurrentUserId;
@@ -38,6 +50,35 @@
                                     @message.Timestamp.ToString("HH:mm")
                                 </small>
                             </div>
+                            <div class="d-flex justify-content-end mt-1">
+                                @if (isCurrentUser)
+                                {
+                                    <button class="btn btn-sm btn-outline-secondary me-1" title="Edit" onclick="toggleEditForm(@message.Id)">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                }
+                                @if (isCurrentUser || User.IsInRole("Admin"))
+                                {
+                                    <form asp-action="DeleteMessage" method="post" class="d-inline">
+                                        <input type="hidden" name="id" value="@message.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                            @if (isCurrentUser)
+                            {
+                                <div id="editForm-@message.Id" style="display:none;" class="mt-2">
+                                    <form asp-action="EditMessage" method="post">
+                                        <input type="hidden" name="id" value="@message.Id" />
+                                        <div class="input-group">
+                                            <textarea name="content" class="form-control" rows="1">@message.Content</textarea>
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -63,9 +104,7 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.PartialAsync("_ValidationScriptsPartial")
     <script>
         // Auto-scroll to bottom
         const messagesContainer = document.querySelector('.messages-container');
@@ -77,5 +116,15 @@
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + 'px';
         });
+
+        // Toggle edit form visibility
+        function toggleEditForm(messageId) {
+            var form = document.getElementById('editForm-' + messageId);
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
     </script>
 }
