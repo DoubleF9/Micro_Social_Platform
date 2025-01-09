@@ -257,22 +257,34 @@ namespace MicroSocialPlatform.Controllers
                 return new List<Message>();
             }
 
-            var messages = await _context.Messages
+            // Get messages received by the user
+            var receivedMessages = await _context.Messages
                 .Where(m => m.ReceiverId == user.Id)
                 .Include(m => m.Sender) // Eagerly load the Sender property
                 .OrderByDescending(m => m.Timestamp)
                 .ToListAsync();
 
-            // Group by SenderId and select the latest message from each sender
-            //orderByDescending is used to get the latest message from each sender
-            var distinctMessages = messages
-            .GroupBy(m => m.SenderId)
-            .Select(g => g.OrderByDescending(m => m.Timestamp).First())
-            .OrderByDescending(m => m.Timestamp)
-            .ToList();
+            // Get messages sent by the user
+            var sentMessages = await _context.Messages
+                .Where(m => m.SenderId == user.Id)
+                .Include(m => m.Receiver) // Eagerly load the Receiver property
+                .OrderByDescending(m => m.Timestamp)
+                .ToListAsync();
+
+            // Combine both sets of messages
+            var allMessages = receivedMessages.Concat(sentMessages).ToList();
+
+            // Group by the other party (either sender or receiver) and select the latest message from each group
+            var distinctMessages = allMessages
+                .GroupBy(m => m.SenderId == user.Id ? m.ReceiverId : m.SenderId)
+                .Select(g => g.OrderByDescending(m => m.Timestamp).First())
+                .OrderByDescending(m => m.Timestamp)
+                .ToList();
 
             return distinctMessages;
         }
+
+
 
         private async Task<List<Group>> GetGroupMessagesAsync()
         {

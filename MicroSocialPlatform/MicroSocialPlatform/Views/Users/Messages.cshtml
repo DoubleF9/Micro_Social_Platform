@@ -1,5 +1,8 @@
-﻿@{
+﻿@using System.Security.Claims
+
+@{
     ViewBag.Title = "Conversations";
+    var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 <div class="container py-5">
@@ -19,9 +22,28 @@
                     @foreach (var message in ViewBag.DirectMessages)
                     {
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>@message.Sender.FirstName @message.Sender.LastName</span>
+                            <span>
+                                <!--Daca imi trimit singur mesaj-->
+                                @if (message.SenderId == currentUserId && message.ReceiverId == currentUserId)
+                                {
+                                    <i class="bi bi-arrow-right"></i>
+                                    <span>@message.Receiver</span>
+                                }
+                                 
 
-                            <a href="@Url.Action("DirectMessages", "Messages", new { userId = message.SenderId })" class="btn btn-primary btn-sm">View Messages</a>
+                                @if (message.SenderId == currentUserId)
+                                {
+                                    <i class="bi bi-arrow-right"></i>
+                                    <span>@message.Receiver</span>
+                                    
+                                }
+                                else
+                                {
+                                    <i class="bi bi-arrow-left"></i>
+                                    <span>@message.Sender</span>
+                                }
+                            </span>
+                            <a href="@Url.Action("DirectMessages", "Messages", new { userId = message.SenderId == currentUserId ? message.ReceiverId : message.SenderId })" class="btn btn-primary btn-sm">View Messages</a>
                         </li>
                     }
                 }
@@ -58,3 +80,5 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
+
