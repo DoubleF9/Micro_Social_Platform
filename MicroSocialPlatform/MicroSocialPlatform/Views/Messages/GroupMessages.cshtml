@@ -4,10 +4,12 @@
     <div class="card shadow-sm">
         <div class="card-header bg-white py-3">
             <div class="d-flex align-items-center justify-content-between">
-                <h2 class="h5 mb-0">
-                    <i class="bi bi-people-fill me-2"></i>
-                    Group Chat
-                </h2>
+                <div class="d-flex align-items-center">
+                    <img src="@ViewBag.GroupIcon" alt="Group Icon" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                    <h2 class="h5 mb-0">
+                        @ViewBag.GroupName
+                    </h2>
+                </div>
                 <span class="badge bg-success rounded-pill">
                     <i class="bi bi-circle-fill me-1"></i>Online
                 </span>
@@ -86,7 +88,7 @@
         </div>
 
         <div class="card-footer bg-white p-3">
-            <form asp-action="SendGroupMessage" method="post" class="message-form">
+            <form asp-action="SendGroupMessage" method="post">
                 <input type="hidden" name="groupId" value="@ViewBag.GroupId" />
                 <div class="input-group">
                     <textarea name="Content"

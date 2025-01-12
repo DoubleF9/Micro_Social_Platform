@@ -20,6 +20,7 @@ wwwroot\images\jackie chan.jpg
 wwwroot\images\morbius.jpg
 wwwroot\images\mourinho.jpg
 wwwroot\images\mystical tree.jpeg
+wwwroot\images\red stone.png
 wwwroot\images\sans.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
@@ -88,6 +89,7 @@ wwwroot\profile_pictures\cristiano.jpg
 wwwroot\profile_pictures\harry the hamster.jpg
 wwwroot\profile_pictures\icons-5235125_1280.png
 wwwroot\profile_pictures\morbius.jpg
+wwwroot\profile_pictures\mourinho.jpg
 wwwroot\profile_pictures\shark.jpg
 wwwroot\profile_pictures\user.jpeg
 wwwroot\profile_pictures\user.jpeg.jfif

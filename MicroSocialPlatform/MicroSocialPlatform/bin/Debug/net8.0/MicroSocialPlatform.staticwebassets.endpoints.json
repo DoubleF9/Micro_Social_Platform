@@ -4109,6 +4109,88 @@
       ]
     },
     {
+      "Route": "images/red stone.7x3r31kcv0.png",
+      "AssetFile": "images/red stone.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1055253"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 16:20:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7x3r31kcv0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI="
+        },
+        {
+          "Name": "label",
+          "Value": "images/red stone.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/red stone.png",
+      "AssetFile": "images/red stone.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1055253"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 16:20:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI="
+        }
+      ]
+    },
+    {
       "Route": "images/sans.png",
       "AssetFile": "images/sans.png",
       "Selectors": [],
@@ -9681,6 +9763,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ldxB003zaUEOsTLDyUCDAeEoiTxgmh3aRIkdsDv5HkA="
+        }
+      ]
+    },
+    {
+      "Route": "profile_pictures/mourinho.2ccm1hqa52.jpg",
+      "AssetFile": "profile_pictures/mourinho.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71613"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 15:45:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2ccm1hqa52"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc="
+        },
+        {
+          "Name": "label",
+          "Value": "profile_pictures/mourinho.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "profile_pictures/mourinho.jpg",
+      "AssetFile": "profile_pictures/mourinho.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71613"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 15:45:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc="
         }
       ]
     },

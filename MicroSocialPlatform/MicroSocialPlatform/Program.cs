@@ -48,7 +48,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Posts}/{action=Index}/{id?}");
+    pattern: "{controller=Users}/{action=Feed}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

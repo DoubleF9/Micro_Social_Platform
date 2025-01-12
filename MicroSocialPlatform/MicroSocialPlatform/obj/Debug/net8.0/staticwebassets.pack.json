@@ -93,6 +93,10 @@
       "PackagePath": "staticwebassets\\images\\mystical tree.jpeg"
     },
     {
+      "Id": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\red stone.png",
+      "PackagePath": "staticwebassets\\images\\red stone.png"
+    },
+    {
       "Id": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\sans.png",
       "PackagePath": "staticwebassets\\images\\sans.png"
     },
@@ -363,6 +367,10 @@
     {
       "Id": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\morbius.jpg",
       "PackagePath": "staticwebassets\\profile_pictures\\morbius.jpg"
+    },
+    {
+      "Id": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\mourinho.jpg",
+      "PackagePath": "staticwebassets\\profile_pictures\\mourinho.jpg"
     },
     {
       "Id": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\shark.jpg",
