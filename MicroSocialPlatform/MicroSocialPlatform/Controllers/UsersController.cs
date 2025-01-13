@@ -245,8 +245,8 @@ namespace MicroSocialPlatform.Controllers
         public async Task<IActionResult> Messages()
         {
             ViewBag.Title = "Conversations";
-            ViewBag.DirectMessages = await GetDirectMessagesAsync() ?? new List<Message>(); // Ensure it's not null
-            ViewBag.GroupMessages = await GetGroupMessagesAsync() ?? new List<Group>(); // Ensure it's not null
+            ViewBag.DirectMessages = await GetDirectMessagesAsync() ?? new List<Message>(); 
+            ViewBag.GroupMessages = await GetGroupMessagesAsync() ?? new List<Group>(); 
 
             return View();
         }
@@ -259,16 +259,16 @@ namespace MicroSocialPlatform.Controllers
                 return new List<Message>();
             }
 
-            // Get messages received by the user
+            // Get messages received by the user that are not group messages
             var receivedMessages = await _context.Messages
-                .Where(m => m.ReceiverId == user.Id)
+                .Where(m => m.ReceiverId == user.Id && m.GroupId == null)
                 .Include(m => m.Sender) // Eagerly load the Sender property
                 .OrderByDescending(m => m.Timestamp)
                 .ToListAsync();
 
-            // Get messages sent by the user
+            // Get messages sent by the user that are not group messages
             var sentMessages = await _context.Messages
-                .Where(m => m.SenderId == user.Id)
+                .Where(m => m.SenderId == user.Id && m.GroupId == null)
                 .Include(m => m.Receiver) // Eagerly load the Receiver property
                 .OrderByDescending(m => m.Timestamp)
                 .ToListAsync();
@@ -288,6 +288,7 @@ namespace MicroSocialPlatform.Controllers
 
 
 
+
         private async Task<List<Group>> GetGroupMessagesAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -297,10 +298,10 @@ namespace MicroSocialPlatform.Controllers
             }
 
             return await _context.Groups
-                .Where(g => g.UserGroups.Any(ug => ug.UserId == user.Id))
+                .Where(g => g.UserGroups.Any(ug => ug.UserId == user.Id && ug.Status == true))
                 .ToListAsync();
-
         }
+
 
 
         private List<Group> GetGroupMessages()

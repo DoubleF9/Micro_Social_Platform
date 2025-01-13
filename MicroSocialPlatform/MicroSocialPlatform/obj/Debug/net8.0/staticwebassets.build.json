@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YWKblkbd8s8cvQbWoGMBgmYFX2DrTMviCGZNWVZdsvA=",
+  "Hash": "qJmUdMofezoZ3LwhvOeHLG1GsyMSOagaXPR7e9RRKpU=",
   "Source": "MicroSocialPlatform",
   "BasePath": "_content/MicroSocialPlatform",
   "Mode": "Default",
@@ -1781,6 +1781,27 @@
       "OriginalItemSpec": "wwwroot\\images\\mystical tree.jpeg"
     },
     {
+      "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\red stone.png",
+      "SourceId": "MicroSocialPlatform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\",
+      "BasePath": "_content/MicroSocialPlatform",
+      "RelativePath": "images/red stone#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7x3r31kcv0",
+      "Integrity": "mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\red stone.png"
+    },
+    {
       "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\sans.png",
       "SourceId": "MicroSocialPlatform",
       "SourceType": "Discovered",
@@ -3207,6 +3228,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\profile_pictures\\morbius.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\mourinho.jpg",
+      "SourceId": "MicroSocialPlatform",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\",
+      "BasePath": "_content/MicroSocialPlatform",
+      "RelativePath": "profile_pictures/mourinho#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2ccm1hqa52",
+      "Integrity": "DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\profile_pictures\\mourinho.jpg"
     },
     {
       "Identity": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\shark.jpg",
@@ -7294,6 +7336,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-2hpLP5hakBgEtqZ61Y3Nl7sYUE206yhc2N6nvNwxe38="
+        }
+      ]
+    },
+    {
+      "Route": "images/red stone.7x3r31kcv0.png",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\red stone.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1055253"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 16:20:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7x3r31kcv0"
+        },
+        {
+          "Name": "label",
+          "Value": "images/red stone.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI="
+        }
+      ]
+    },
+    {
+      "Route": "images/red stone.png",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\images\\red stone.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1055253"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 16:20:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mxNCVBWWDb9wvrx8hnoZ7Jd3xy43jOFrjB3i7RPACNI="
         }
       ]
     },
@@ -13034,6 +13158,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ldxB003zaUEOsTLDyUCDAeEoiTxgmh3aRIkdsDv5HkA="
+        }
+      ]
+    },
+    {
+      "Route": "profile_pictures/mourinho.2ccm1hqa52.jpg",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\mourinho.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71613"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 15:45:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2ccm1hqa52"
+        },
+        {
+          "Name": "label",
+          "Value": "profile_pictures/mourinho.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc="
+        }
+      ]
+    },
+    {
+      "Route": "profile_pictures/mourinho.jpg",
+      "AssetFile": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\wwwroot\\profile_pictures\\mourinho.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71613"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 12 Jan 2025 15:45:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DnOuPwEQJH/IPBtjw8rvmPyh165xMkCdlxC0BD/WEQc="
         }
       ]
     },

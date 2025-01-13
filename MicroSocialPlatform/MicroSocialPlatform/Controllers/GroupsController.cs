@@ -73,8 +73,18 @@ namespace MicroSocialPlatform.Controllers
                 return NotFound();
             }
 
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            var userGroup = group.UserGroups.FirstOrDefault(ug => ug.UserId == currentUser.Id && ug.Status == true);
+            ViewBag.IsAcceptedMember = userGroup != null;
+
             return View(group);
         }
+
 
         [Authorize(Roles = "User,Editor,Admin")]
         [HttpPost]
@@ -331,5 +341,31 @@ namespace MicroSocialPlatform.Controllers
             }
 
         }
+        [Authorize(Roles = "User,Editor,Admin")]
+        [HttpPost]
+        public async Task<IActionResult> LeaveGroup(int groupId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Challenge();
+            }
+
+            var userGroup = await db.UserGroups
+                .FirstOrDefaultAsync(ug => ug.UserId == currentUser.Id && ug.GroupId == groupId && ug.Status == true);
+
+            if (userGroup == null)
+            {
+                TempData["Error"] = "You are not an accepted member of this group.";
+                return RedirectToAction("GroupMessages", new { groupId });
+            }
+
+            db.UserGroups.Remove(userGroup);
+            await db.SaveChangesAsync();
+
+            TempData["Success"] = "You have left the group.";
+            return RedirectToAction("Index", "Groups");
+        }
+
     }
 }

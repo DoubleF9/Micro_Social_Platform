@@ -31,6 +31,18 @@ namespace MicroSocialPlatform.Controllers
                 return Challenge();
             }
 
+            var receiver = await _userManager.FindByIdAsync(userId);
+            if (receiver == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.ReceiverId = userId;
+            ViewBag.ReceiverFirstName = receiver.FirstName;
+            ViewBag.ReceiverLastName = receiver.LastName;
+            ViewBag.ReceiverProfilePicture = receiver.ProfilePicture;
+            ViewBag.CurrentUserId = currentUser.Id;
+
             var messages = await db.Messages
                 .Include(m => m.Sender) // Include sender information
                 .Where(m => (m.SenderId == currentUser.Id && m.ReceiverId == userId) ||
@@ -38,17 +50,9 @@ namespace MicroSocialPlatform.Controllers
                 .OrderBy(m => m.Timestamp)
                 .ToListAsync();
 
-            if (messages == null)
-            {
-                messages = new List<Message>();
-            }
-
-            ViewBag.ReceiverId = userId;
-            ViewBag.CurrentUserId = currentUser.Id;
-            ViewBag.CurrentUserName = currentUser.FirstName;
-
             return View(messages);
         }
+
 
 
         // GET: Messages/GroupMessages
@@ -59,14 +63,28 @@ namespace MicroSocialPlatform.Controllers
             {
                 return Challenge();
             }
-            //Verificam daca utilizatorul curent este membru al grupului
-            var userGroup = await db.UserGroups
-                .FirstOrDefaultAsync(ug => ug.UserId == currentUser.Id && ug.GroupId == groupId);
+
+            var group = await db.Groups
+                .Include(g => g.UserGroups)
+                .FirstOrDefaultAsync(g => g.Id == groupId);
+
+            if (group == null)
+            {
+                return NotFound();
+            }
+
+            // Check if the current user is an accepted member of the group
+            var userGroup = group.UserGroups.FirstOrDefault(ug => ug.UserId == currentUser.Id && ug.Status == true);
             if (userGroup == null)
             {
-                TempData["Error"] = "You are not a member of this group.";
+                TempData["Error"] = "You are not an accepted member of this group.";
                 return RedirectToAction("Index", "Groups");
             }
+
+            ViewBag.GroupId = groupId;
+            ViewBag.GroupName = group.Name;
+            ViewBag.GroupIcon = group.Image;
+            ViewBag.CurrentUserId = currentUser.Id;
 
             var messages = await db.Messages
                 .Include(m => m.Sender) // Include sender information
@@ -74,17 +92,10 @@ namespace MicroSocialPlatform.Controllers
                 .OrderBy(m => m.Timestamp)
                 .ToListAsync();
 
-            if (messages == null)
-            {
-                messages = new List<Message>();
-            }
-
-            ViewBag.GroupId = groupId;
-            ViewBag.CurrentUserId = currentUser.Id;
-            ViewBag.CurrentUserName = currentUser.FirstName;
-
             return View(messages);
         }
+
+
 
 
         // POST: Messages/SendDirectMessage
