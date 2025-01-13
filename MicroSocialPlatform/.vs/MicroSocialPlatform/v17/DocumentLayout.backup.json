@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\turcu\\facultate\\asp\\micro_social_platform\\micro_social_platform\\microsocialplatform\\microsocialplatform\\views\\groups\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\views\\groups\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\turcu\\facultate\\asp\\micro_social_platform\\micro_social_platform\\microsocialplatform\\microsocialplatform\\controllers\\groupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\controllers\\groupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\turcu\\facultate\\asp\\micro_social_platform\\micro_social_platform\\microsocialplatform\\microsocialplatform\\views\\groups\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|solutionrelative:microsocialplatform\\views\\groups\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71CE89F9-FDE3-404E-AD01-166ACFD2FEF6}|MicroSocialPlatform\\MicroSocialPlatform.csproj|c:\\users\\turcu\\facultate\\asp\\micro_social_platform\\micro_social_platform\\microsocialplatform\\microsocialplatform\\views\\messages\\groupmessages.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,24 +46,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1099,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Show.cshtml",
               "DocumentMoniker": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Groups\\Show.cshtml",
               "RelativeDocumentMoniker": "MicroSocialPlatform\\Views\\Groups\\Show.cshtml",
               "ToolTip": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Views\\Groups\\Show.cshtml",
               "RelativeToolTip": "MicroSocialPlatform\\Views\\Groups\\Show.cshtml",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAcwLYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAcwGkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T16:53:51.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T16:53:51.96Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GroupsController.cs",
               "DocumentMoniker": "C:\\Users\\turcu\\facultate\\ASP\\Micro_Social_Platform\\Micro_Social_Platform\\MicroSocialPlatform\\MicroSocialPlatform\\Controllers\\GroupsController.cs",
               "RelativeDocumentMoniker": "MicroSocialPlatform\\Controllers\\GroupsController.cs",
@@ -75,14 +82,6 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "GroupMessages.cshtml",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Views\\Messages\\GroupMessages.cshtml",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAHwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T16:46:26.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T16:46:26.992Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Views\\Messages\\DirectMessages.cshtml",
               "ViewState": "AgIAAF0AAAAAAAAAAAAAAHcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T16:37:56.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T16:37:56.961Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Views\\Users\\Profile.cshtml",
               "ViewState": "AgIAAJ4AAAAAAAAAAAAAwL4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T16:14:52.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T16:14:52.886Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Views\\Users\\BasicProfile.cshtml",
               "ViewState": "AgIAADwAAAAAAAAAAAAAwFQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-12T16:11:48.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T16:11:48.623Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Controllers\\MessagesController.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAuwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T16:01:11.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T16:01:11.043Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Controllers\\UsersController.cs",
               "ViewState": "AgIAAPwAAAAAAAAAAAD4vxwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:55:09.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T15:55:09.168Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "MicroSocialPlatform\\Program.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAADIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T15:39:24.559Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T15:39:24.559Z"
             }
           ]
         },
